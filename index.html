@@ -148,6 +148,93 @@
             transform: scale(1.04);
         }
 
+        /* ==========================================================================
+           Upgraded Luxury CTA Section Styles & Animations
+           ========================================================================== */
+        @keyframes ctaLogoDrift1 {
+            0% {
+                transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+            }
+            20% {
+                transform: translate3d(45px, -30px, 0) rotate(8deg) scale(1.06);
+            }
+            45% {
+                transform: translate3d(-30px, -55px, 0) rotate(-6deg) scale(0.96);
+            }
+            70% {
+                transform: translate3d(-50px, 20px, 0) rotate(10deg) scale(1.04);
+            }
+            85% {
+                transform: translate3d(20px, 35px, 0) rotate(-4deg) scale(1.02);
+            }
+            100% {
+                transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+            }
+        }
+
+        @keyframes ctaLogoDrift2 {
+            0% {
+                transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+            }
+            25% {
+                transform: translate3d(-50px, 35px, 0) rotate(-10deg) scale(1.08);
+            }
+            50% {
+                transform: translate3d(35px, -25px, 0) rotate(7deg) scale(0.94);
+            }
+            75% {
+                transform: translate3d(60px, 40px, 0) rotate(-5deg) scale(1.05);
+            }
+            100% {
+                transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+            }
+        }
+
+        @keyframes ctaLogoDrift3 {
+            0% {
+                transform: translate3d(0, 0, 0) rotate(0deg) scale(0.9);
+                opacity: 0.65;
+            }
+            33% {
+                transform: translate3d(30px, -40px, 0) rotate(12deg) scale(1.02);
+                opacity: 0.85;
+            }
+            66% {
+                transform: translate3d(-25px, 30px, 0) rotate(-8deg) scale(0.95);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translate3d(0, 0, 0) rotate(0deg) scale(0.9);
+                opacity: 0.65;
+            }
+        }
+
+        @keyframes ctaLaserSweep {
+            0% { transform: translateX(-100%) skewX(-30deg); opacity: 0; }
+            30% { opacity: 0.8; }
+            70% { opacity: 0.8; }
+            100% { transform: translateX(250%) skewX(-30deg); opacity: 0; }
+        }
+
+        .cta-floating-logo-1 {
+            animation: ctaLogoDrift1 16s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+            will-change: transform;
+        }
+
+        .cta-floating-logo-2 {
+            animation: ctaLogoDrift2 20s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+            will-change: transform;
+        }
+
+        .cta-floating-logo-3 {
+            animation: ctaLogoDrift3 14s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+            will-change: transform;
+        }
+
+        .cta-laser-beam {
+            animation: ctaLaserSweep 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
 
         /* Features carousel track scrollbar hiding utility */
         #features-track {
@@ -3422,27 +3509,125 @@
             </div>
         </section>
 
-        <!-- Streamlined Clean Call To Action Section (Hostinger Moodboard Style Split BG) -->
+        <!-- Streamlined Clean Call To Action Section (Hostinger Moodboard Style Split BG with Luxury Cuts & Floating Brand Animation) -->
         <section class="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 bg-[#fcfcfc]" id="contact" aria-labelledby="cta-title">
             <div class="max-w-[1400px] mx-auto">
-                <div class="relative rounded-3xl border border-[#e4e4e7] p-8 sm:p-12 lg:p-16 shadow-[0_20px_50px_-20px_rgba(9,9,11,0.06)] overflow-hidden" style="background: #EEF5FF;">
+                <div class="relative rounded-3xl border border-[#dce7f6] p-8 sm:p-12 lg:p-16 shadow-[0_24px_60px_-15px_rgba(18,107,220,0.12)] overflow-hidden" style="background: linear-gradient(135deg, #f2f7ff 0%, #e6efff 50%, #dbe9ff 100%);">
                     
-                    <!-- 50% Right Background: deep Luxury Blue with diagonal facet -->
-                    <div class="absolute inset-y-0 right-0 w-full lg:w-1/2 pointer-events-none hidden lg:block"
-                        style="background: linear-gradient(135deg, #126bdc 0%, #0f58b6 100%); clip-path: polygon(14% 0%, 100% 0%, 100% 100%, 0% 100%);" aria-hidden="true">
+                    <!-- ======================================================== -->
+                    <!-- BACKGROUND GRADIENT LINES, GEOMETRIC GRID & CUT ACCENTS  -->
+                    <!-- ======================================================== -->
+                    <!-- Ultra-crisp geometric line grid texture across left side -->
+                    <div class="absolute inset-0 pointer-events-none opacity-[0.07] [background-image:linear-gradient(to_right,#126bdc_1px,transparent_1px),linear-gradient(to_bottom,#126bdc_1px,transparent_1px)] [background-size:32px_32px]"></div>
+
+                    <!-- Luminous radial ambient lighting behind content -->
+                    <div class="absolute -top-24 -left-20 w-96 h-96 rounded-full bg-blue-400/20 blur-[90px] pointer-events-none"></div>
+                    <div class="absolute -bottom-24 left-1/3 w-80 h-80 rounded-full bg-purple-500/15 blur-[80px] pointer-events-none"></div>
+
+                    <!-- 50% Right Background: Deep Luxury Blue with diagonal facet & angled cut line -->
+                    <div class="absolute inset-y-0 right-0 w-full lg:w-1/2 pointer-events-none hidden lg:block overflow-hidden"
+                        style="background: linear-gradient(135deg, #126bdc 0%, #0d52a7 60%, #08336d 100%); clip-path: polygon(14% 0%, 100% 0%, 100% 100%, 0% 100%);" aria-hidden="true">
+                        
+                        <!-- Internal glowing mesh & subtle micro-grid inside blue facet -->
+                        <div class="absolute inset-0 opacity-15 [background-image:linear-gradient(rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:24px_24px]"></div>
+                        <!-- Ambient violet light inside right side -->
+                        <div class="absolute -bottom-20 -right-20 w-80 h-80 rounded-full bg-[#8b5cf6]/40 blur-3xl"></div>
+                        <div class="absolute top-10 right-10 w-64 h-64 rounded-full bg-cyan-400/25 blur-3xl"></div>
                     </div>
 
-                    <!-- Hairline accent lines along the diagonal split -->
-                    <div class="absolute inset-y-0 right-0 w-full lg:w-1/2 pointer-events-none hidden lg:block" aria-hidden="true">
+                    <!-- Precision Angled Cuts & Hairline Accent Laser Lines along the facet edge -->
+                    <div class="absolute inset-y-0 right-0 w-full lg:w-1/2 pointer-events-none hidden lg:block overflow-hidden" aria-hidden="true">
                         <svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100" fill="none">
-                            <line x1="14" y1="0" x2="0" y2="100" stroke="rgba(255,255,255,0.25)" stroke-width="0.75" />
-                            <line x1="19" y1="0" x2="5" y2="100" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+                            <!-- Primary sharp cut line with gradient shimmer -->
+                            <line x1="14" y1="0" x2="0" y2="100" stroke="url(#cta-cut-grad-1)" stroke-width="0.85" />
+                            <!-- Parallel precision echo line -->
+                            <line x1="18" y1="0" x2="4" y2="100" stroke="url(#cta-cut-grad-2)" stroke-width="0.45" stroke-dasharray="2 2" />
+                            <!-- Third faint cut reflection -->
+                            <line x1="22" y1="0" x2="8" y2="100" stroke="rgba(255,255,255,0.12)" stroke-width="0.35" />
+                            
+                            <!-- Cross-directional geometric accent cut lines -->
+                            <line x1="30" y1="0" x2="90" y2="100" stroke="rgba(255,255,255,0.07)" stroke-width="0.5" />
+                            <line x1="60" y1="0" x2="100" y2="70" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" stroke-dasharray="4 6" />
+
+                            <defs>
+                                <linearGradient id="cta-cut-grad-1" x1="0" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8" />
+                                    <stop offset="35%" stop-color="#80b4f8" stop-opacity="0.9" />
+                                    <stop offset="70%" stop-color="#cd5fff" stop-opacity="0.7" />
+                                    <stop offset="100%" stop-color="#ffffff" stop-opacity="0.3" />
+                                </linearGradient>
+                                <linearGradient id="cta-cut-grad-2" x1="0" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.2" />
+                                    <stop offset="50%" stop-color="#ffffff" stop-opacity="0.6" />
+                                    <stop offset="100%" stop-color="#126bdc" stop-opacity="0.1" />
+                                </linearGradient>
+                            </defs>
                         </svg>
+
+                        <!-- Moving Laser Shimmer traveling down the cut facet -->
+                        <div class="absolute inset-0 cta-laser-beam opacity-40 bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none"></div>
                     </div>
 
-                    <!-- Mobile/Tablet fallback -->
-                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-[#126bdc]/10 pointer-events-none lg:hidden" aria-hidden="true"></div>
+                    <!-- Mobile/Tablet fallback gradient wash -->
+                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent via-[#126bdc]/10 to-[#126bdc]/25 pointer-events-none lg:hidden" aria-hidden="true"></div>
 
+                    <!-- ======================================================== -->
+                    <!-- RANDOMLY MOVING / FLOATING MAIN BRAND LOGO EMBLEM ICONS  -->
+                    <!-- (Main Logo Icon Only - Not the content/text wordmark)     -->
+                    <!-- ======================================================== -->
+                    <!-- Floating Main Brand Logo Emblem 1: Top-Right Over Luxury Blue Canvas -->
+                    <div class="absolute top-6 sm:top-8 right-8 sm:right-16 z-20 pointer-events-none cta-floating-logo-1 hidden sm:block">
+                        <div class="relative group">
+                            <!-- Ambient glowing aura -->
+                            <div class="absolute -inset-2 bg-gradient-to-tr from-cyan-400/40 via-purple-500/40 to-pink-500/30 rounded-2xl blur-lg"></div>
+                            <!-- Standalone Hexagon Emblem Card -->
+                            <div class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-xl border border-white/40 shadow-[0_16px_36px_rgba(0,0,0,0.3)] flex items-center justify-center p-2.5">
+                                <svg class="w-full h-full drop-shadow-[0_4px_12px_rgba(205,95,255,0.45)]" viewBox="0 0 100 100" fill="none">
+                                    <defs>
+                                        <linearGradient id="cta-hex-bg-1" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0%" stop-color="#b03cf6" />
+                                            <stop offset="100%" stop-color="#126bdc" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="100" height="100" rx="26" fill="url(#cta-hex-bg-1)" />
+                                    <!-- Inner White Hexagon Mark exactly matching OwnerHive brand -->
+                                    <polygon points="50,18 78,34 78,66 50,82 22,66 22,34" stroke="#ffffff" stroke-width="7" stroke-linejoin="round" fill="none" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Main Brand Logo Emblem 2: Floating near center-right division -->
+                    <div class="absolute bottom-10 lg:bottom-14 right-[42%] lg:right-[47%] z-20 pointer-events-none cta-floating-logo-2 hidden md:block">
+                        <div class="relative group">
+                            <!-- Subtle blue/violet glow -->
+                            <div class="absolute -inset-1.5 bg-[#126bdc]/30 rounded-2xl blur-md"></div>
+                            <div class="relative w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-white/90 backdrop-blur-lg border border-blue-200 shadow-[0_10px_28px_rgba(18,107,220,0.22)] flex items-center justify-center p-2">
+                                <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
+                                    <defs>
+                                        <linearGradient id="cta-hex-bg-2" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0%" stop-color="#9333ea" />
+                                            <stop offset="100%" stop-color="#126bdc" />
+                                        </linearGradient>
+                                    </defs>
+                                    <rect width="100" height="100" rx="26" fill="url(#cta-hex-bg-2)" />
+                                    <polygon points="50,18 78,34 78,66 50,82 22,66 22,34" stroke="#ffffff" stroke-width="7" stroke-linejoin="round" fill="none" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Main Brand Logo Emblem 3: Soft ambient background floater near left corner -->
+                    <div class="absolute top-12 left-8 z-10 pointer-events-none cta-floating-logo-3 hidden lg:block">
+                        <div class="w-8 h-8 rounded-xl bg-white/70 backdrop-blur-sm border border-blue-200/60 shadow-sm flex items-center justify-center p-1.5 opacity-75">
+                            <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
+                                <rect width="100" height="100" rx="24" fill="url(#cta-hex-bg-1)" />
+                                <polygon points="50,18 78,34 78,66 50,82 22,66 22,34" stroke="#ffffff" stroke-width="7" stroke-linejoin="round" fill="none" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Main Grid Content Layer -->
                     <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
                         <!-- Left Side (50%): Content pinned to top, buttons & badges pinned to bottom -->
                         <div class="lg:col-span-6 xl:col-span-6 text-left flex flex-col justify-between">
@@ -3452,7 +3637,7 @@
                                     Ready to transform your daily operations?
                                 </h2>
                                 <p class="text-sm sm:text-base text-[#71717a] leading-relaxed max-w-lg font-normal mb-8 lg:mb-0">
-                                    Join businesses managing queues, reviews, and social campaigns from one connected workspace.
+                                    Join thousands of forward-thinking businesses managing queues, reviews, and multi-network campaigns from one unified AI dashboard.
                                 </p>
                             </div>
 
@@ -3472,32 +3657,38 @@
                                         </span>
                                     </a>
                                     <a href="#portal"
-                                        class="inline-flex items-center justify-center min-h-[52px] px-8 text-sm font-bold text-zinc-900 bg-white/70 border border-zinc-300 rounded-full hover:bg-white hover:border-zinc-400 hover:-translate-y-0.5 backdrop-blur-md transition-all shadow-sm" id="cta-secondary-btn">
+                                        class="inline-flex items-center justify-center min-h-[52px] px-8 text-sm font-bold text-zinc-900 bg-white/80 border border-zinc-300/80 rounded-full hover:bg-white hover:border-zinc-400 hover:-translate-y-0.5 backdrop-blur-md transition-all shadow-sm" id="cta-secondary-btn">
                                         Explore Portal Features
                                     </a>
                                 </div>
 
-                                <!-- System Status text line directly at the bottom of the buttons (all one color) -->
+                                <!-- System Status text line directly at the bottom of the buttons -->
                                 <div class="inline-flex flex-wrap items-center gap-2 text-xs text-[#71717a] font-medium">
-                                    <span>Systems Operational</span>
+                                    <span class="inline-flex items-center gap-1.5">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                        <span>Systems Operational</span>
+                                    </span>
                                     <span class="text-zinc-400">&bull;</span>
                                     <span>SOC-2 Certified</span>
                                     <span class="text-zinc-400">&bull;</span>
-                                    <span>99.9% SLA</span>
+                                    <span>99.9% SLA Guarantee</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Right Side (50% over Luxury Blue): Whitish 3D Clean Image Preview -->
+                        <!-- Right Side (50% over Luxury Blue): Whitish 3D Clean Image Preview with glowing cuts -->
                         <div class="lg:col-span-6 xl:col-span-6 relative flex items-center">
                             <!-- Subtle glowing aura behind the whitish card -->
-                            <div class="absolute -inset-2 bg-white/20 rounded-3xl blur-xl pointer-events-none hidden lg:block"></div>
+                            <div class="absolute -inset-3 bg-gradient-to-tr from-white/30 via-cyan-300/20 to-purple-400/25 rounded-3xl blur-2xl pointer-events-none hidden lg:block"></div>
                             
-                            <div class="relative w-full rounded-2xl overflow-hidden border border-white/40 lg:border-white/50 bg-white shadow-[0_20px_40px_rgba(9,9,11,0.18)] aspect-[16/10] group">
+                            <div class="relative w-full rounded-2xl overflow-hidden border border-white/50 bg-white shadow-[0_25px_50px_-12px_rgba(9,9,11,0.25)] aspect-[16/10] group">
                                 <img src="assets/ownerhive-cta-white.jpg"
                                     alt="OwnerHive modern clean dashboard analytics"
-                                    class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
+                                    class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
                                     loading="lazy" width="1280" height="720">
+
+                                <!-- Glass corner reflection cut overlay -->
+                                <div class="absolute inset-0 pointer-events-none bg-gradient-to-tr from-transparent via-white/5 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             </div>
                         </div>
                     </div>
