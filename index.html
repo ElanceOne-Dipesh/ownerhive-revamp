@@ -3453,18 +3453,29 @@
             </div>
         </section>
 
-        <!-- Streamlined Clean Call To Action Section (Restrained, Content-Width Card) -->
+        <!-- Streamlined Clean Call To Action Section (Hostinger Moodboard Style Split BG) -->
         <section class="py-16 sm:py-24 px-4 sm:px-6 lg:px-12 bg-[#fcfcfc]" id="contact" aria-labelledby="cta-title">
             <div class="max-w-[1400px] mx-auto">
-                <div class="relative rounded-3xl bg-gradient-to-br from-white via-white to-[#126bdc]/10 border border-[#e4e4e7] p-8 sm:p-12 lg:p-16 shadow-[0_20px_50px_-20px_rgba(9,9,11,0.06)] overflow-hidden">
-                    <!-- Subtle Luxury Blue Soft Ambient Glow Spot (#126BDC only) -->
-                    <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#126bdc]/15 blur-3xl pointer-events-none" aria-hidden="true"></div>
+                <div class="relative rounded-3xl border border-[#e4e4e7] p-8 sm:p-12 lg:p-16 shadow-[0_20px_50px_-20px_rgba(9,9,11,0.06)] overflow-hidden" style="background: #EEF5FF;">
+                    
+                    <!-- 50% Right Background: deep Luxury Blue with diagonal facet -->
+                    <div class="absolute inset-y-0 right-0 w-full lg:w-1/2 pointer-events-none hidden lg:block"
+                        style="background: linear-gradient(135deg, #126bdc 0%, #0f58b6 100%); clip-path: polygon(14% 0%, 100% 0%, 100% 100%, 0% 100%);" aria-hidden="true">
+                    </div>
 
-                    <!-- Clean Line Grid Background Pattern using Luxury Blue (#126BDC) lines -->
-                    <div class="absolute inset-0 opacity-[0.08] pointer-events-none [background-image:linear-gradient(to_right,#126bdc_1px,transparent_1px),linear-gradient(to_bottom,#126bdc_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_top_right,black_40%,transparent_80%)]" aria-hidden="true"></div>
+                    <!-- Hairline accent lines along the diagonal split -->
+                    <div class="absolute inset-y-0 right-0 w-full lg:w-1/2 pointer-events-none hidden lg:block" aria-hidden="true">
+                        <svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100" fill="none">
+                            <line x1="14" y1="0" x2="0" y2="100" stroke="rgba(255,255,255,0.25)" stroke-width="0.75" />
+                            <line x1="19" y1="0" x2="5" y2="100" stroke="rgba(255,255,255,0.12)" stroke-width="0.5" />
+                        </svg>
+                    </div>
 
-                    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-                        <!-- Left Side: Clean, Focused Conversion Copy -->
+                    <!-- Mobile/Tablet fallback -->
+                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-[#126bdc]/10 pointer-events-none lg:hidden" aria-hidden="true"></div>
+
+                    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+                        <!-- Left Side (50%): Clean, Focused Conversion Copy -->
                         <div class="lg:col-span-6 xl:col-span-6 text-left">
                             <p class="text-sm font-semibold tracking-[0.02em] text-[#126bdc] mb-3">
                                 Get started today
@@ -3476,18 +3487,21 @@
                                 Join businesses managing queues, reviews, and social campaigns from one connected workspace.
                             </p>
 
-                            <!-- Primary CTA Buttons -->
+                            <!-- Primary CTA Buttons (matching hero / navbar style) -->
                             <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-6">
-                                <a href="https://ownerhive.com/contact/"
-                                    class="inline-flex items-center justify-center min-h-[52px] px-8 text-sm font-semibold text-white bg-[#126bdc] hover:bg-[#0f58b6] rounded-full shadow-[0_8px_20px_rgba(18,107,220,0.25)] hover:shadow-[0_12px_28px_rgba(18,107,220,0.35)] hover:-translate-y-0.5 active:translate-y-0 transition-all group">
+                                <a href="https://ownerhive.com/contact/" class="nav-cta-luxury nav-cta-hero group" id="cta-primary-btn" aria-label="Get Started Free">
                                     <span>Get Started Free</span>
-                                    <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                                        <polyline points="12 5 19 12 12 19"></polyline>
-                                    </svg>
+                                    <span class="nav-cta-icon-pill">
+                                        <svg class="w-4 h-4 text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </span>
                                 </a>
                                 <a href="https://ownerhive.com/contact/"
-                                    class="inline-flex items-center justify-center min-h-[52px] px-7 text-sm font-semibold text-[#09090b] bg-[#fcfcfc] hover:bg-zinc-100 border border-[#e4e4e7] rounded-full transition-all hover:-translate-y-0.5">
+                                    class="inline-flex items-center justify-center min-h-[52px] px-8 text-sm font-bold text-zinc-900 bg-white/80 border border-zinc-200/90 rounded-full hover:bg-white hover:border-zinc-300 hover:-translate-y-0.5 backdrop-blur-md transition-all shadow-sm" id="cta-secondary-btn">
                                     <span>Book a Demo</span>
                                 </a>
                             </div>
@@ -3501,9 +3515,12 @@
                             </p>
                         </div>
 
-                        <!-- Right Side: Whitish 3D Clean Image Preview -->
+                        <!-- Right Side (50% over Luxury Blue): Whitish 3D Clean Image Preview -->
                         <div class="lg:col-span-6 xl:col-span-6 relative">
-                            <div class="relative rounded-2xl overflow-hidden border border-[#e4e4e7] bg-[#fcfcfc] shadow-[0_10px_30px_rgba(9,9,11,0.05)] aspect-[16/10] group">
+                            <!-- Subtle glowing aura behind the whitish card -->
+                            <div class="absolute -inset-2 bg-white/20 rounded-3xl blur-xl pointer-events-none hidden lg:block"></div>
+                            
+                            <div class="relative rounded-2xl overflow-hidden border border-white/40 lg:border-white/50 bg-white shadow-[0_20px_40px_rgba(9,9,11,0.18)] aspect-[16/10] group">
                                 <img src="assets/ownerhive-cta-white.jpg"
                                     alt="OwnerHive modern clean dashboard analytics"
                                     class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"
@@ -3516,15 +3533,319 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="py-8 px-6 md:px-10 lg:px-12 text-zinc-400 bg-[#09090b] text-xs">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 max-w-[1400px] mx-auto">
-            <a href="#top" class="inline-flex items-center opacity-85 hover:opacity-100 transition-opacity"
-                aria-label="OwnerHive home">
-                <img src="assets/ownerhive-logo.webp" alt="OwnerHive"
-                    class="h-6 w-auto object-contain brightness-0 invert" width="1536" height="366">
-            </a>
-            <span>One clear view of the work that moves your business. © 2026 ElanceOne LLC. All Rights Reserved.</span>
+    <!-- Luxury AI Platform Footer -->
+    <footer class="relative overflow-hidden bg-[#09090b] text-zinc-400 border-t border-white/[0.08]" aria-labelledby="footer-heading">
+        <h2 id="footer-heading" class="sr-only">Footer</h2>
+
+        <!-- Subtle Ambient Lighting Gradients in Background -->
+        <div class="absolute -top-40 left-1/4 -translate-x-1/2 w-[650px] h-[380px] bg-[#126bdc]/18 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute -bottom-40 right-1/4 translate-x-1/2 w-[550px] h-[350px] bg-[#cd5fff]/12 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <!-- Line Design Overlay covering bottom ~40% of the footer up with angled hairlines -->
+        <div class="absolute inset-x-0 bottom-0 h-[40%] pointer-events-none overflow-hidden" aria-hidden="true">
+            <!-- Diagonal hairline accent lines (Style Guide / CTA luxury lines) -->
+            <svg class="absolute inset-0 w-full h-full opacity-25" preserveAspectRatio="none" viewBox="0 0 1440 320" fill="none">
+                <!-- Soft blue/purple glow line across the 40% boundary -->
+                <line x1="0" y1="0" x2="1440" y2="0" stroke="url(#footer-line-grad)" stroke-width="1" />
+                <!-- Angled geometric styling lines rising from bottom -->
+                <line x1="0" y1="320" x2="680" y2="0" stroke="url(#footer-diag-1)" stroke-width="0.75" />
+                <line x1="80" y1="320" x2="760" y2="0" stroke="url(#footer-diag-2)" stroke-width="0.5" stroke-dasharray="4 6" />
+                <line x1="1440" y1="320" x2="820" y2="0" stroke="url(#footer-diag-3)" stroke-width="0.75" />
+                <line x1="1360" y1="320" x2="740" y2="0" stroke="url(#footer-diag-2)" stroke-width="0.5" stroke-dasharray="4 6" />
+                <defs>
+                    <linearGradient id="footer-line-grad" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#126bdc" stop-opacity="0" />
+                        <stop offset="25%" stop-color="#126bdc" stop-opacity="0.4" />
+                        <stop offset="50%" stop-color="#cd5fff" stop-opacity="0.6" />
+                        <stop offset="75%" stop-color="#126bdc" stop-opacity="0.4" />
+                        <stop offset="100%" stop-color="#126bdc" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="footer-diag-1" x1="0" y1="320" x2="680" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#126bdc" stop-opacity="0.5" />
+                        <stop offset="100%" stop-color="#cd5fff" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="footer-diag-2" x1="0" y1="1" x2="0" y2="0" gradientUnits="objectBoundingBox">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="footer-diag-3" x1="1440" y1="320" x2="820" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#cd5fff" stop-opacity="0.5" />
+                        <stop offset="100%" stop-color="#126bdc" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <!-- Vertical hairline column pinstripes in bottom 40% -->
+            <div class="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(90deg,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:120px_100%] [mask-image:linear-gradient(to_top,black,transparent)]"></div>
+            <!-- Subtle bottom glow wash -->
+            <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#126bdc]/10 to-transparent"></div>
+        </div>
+
+        <!-- Subtle Hairline Geometric Grid Texture -->
+        <div class="absolute inset-0 opacity-[0.035] pointer-events-none [background-image:linear-gradient(rgba(255,255,255,.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.2)_1px,transparent_1px)] [background-size:60px_60px]"></div>
+
+        <div class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 pt-16 sm:pt-20 pb-12">
+            <!-- Top Footer Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 pb-14 border-b border-white/[0.08]">
+                <!-- Brand Statement & Newsletter Column (col-span-4) -->
+                <div class="lg:col-span-4 flex flex-col justify-between">
+                    <div>
+                        <!-- Real Brand Logo (no border, clean presentation) -->
+                        <a href="#top" class="inline-flex items-center group transition-opacity hover:opacity-90" aria-label="OwnerHive home">
+                            <span class="inline-flex items-center px-3 py-1.5 rounded-xl bg-white shadow-sm">
+                                <img src="Docs/Style Guide/ownerhive-logo.webp" alt="OwnerHive"
+                                    class="h-7 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]" width="1536" height="366">
+                            </span>
+                        </a>
+
+                        <p class="mt-5 text-sm text-zinc-400 leading-relaxed max-w-sm font-normal">
+                            OwnerHive unifies social scheduling, SMS queues, mobile check-ins, and 5-star Google review growth into one intelligent command center.
+                        </p>
+
+                        <!-- System Status & Security Badges -->
+                        <div class="mt-6 flex flex-wrap items-center gap-2.5">
+                            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/[0.12] border border-emerald-500/30 text-emerald-400 text-xs font-semibold backdrop-blur-sm shadow-sm">
+                                <span class="relative flex h-2 w-2">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                </span>
+                                <span>Systems Operational</span>
+                            </div>
+                            <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.1] text-zinc-300 text-xs font-medium backdrop-blur-sm">
+                                <svg class="w-3.5 h-3.5 text-[#126bdc]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                                <span>SOC-2 Certified</span>
+                            </div>
+                            <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.1] text-zinc-300 text-xs font-medium backdrop-blur-sm">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                                <span>99.9% SLA</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter / Product Updates Subscription -->
+                    <div class="mt-8 pt-8 border-t border-white/[0.06]">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs font-bold tracking-wider text-white uppercase">Subscribe to Product Releases</span>
+                            <span class="px-2 py-0.5 text-[10px] font-semibold text-[#cd5fff] bg-[#cd5fff]/15 rounded-full border border-[#cd5fff]/30">Weekly</span>
+                        </div>
+                        <p class="text-xs text-zinc-400 mb-3.5">Be the first to receive AI automation playbooks &amp; workflow updates.</p>
+                        <form class="relative flex items-center max-w-sm group/form" onsubmit="event.preventDefault(); const btn = this.querySelector('button span'); btn.textContent = 'Subscribed ✓'; this.querySelector('input').value = ''; setTimeout(() => btn.textContent = 'Join', 3000);">
+                            <input type="email" placeholder="Enter your work email" required
+                                class="w-full h-12 pl-4 pr-32 rounded-full bg-white/[0.06] border border-white/[0.12] text-sm text-white placeholder-zinc-400 focus:outline-none focus:border-[#126bdc] focus:ring-2 focus:ring-[#126bdc]/30 transition-all">
+                            <button type="submit"
+                                class="nav-cta-luxury absolute right-1 top-1 bottom-1 !py-0 !px-4 text-xs font-bold shadow-md cursor-pointer flex items-center gap-1.5 group/btn" aria-label="Subscribe">
+                                <span>Join</span>
+                                <span class="nav-cta-icon-pill !w-5 !h-5">
+                                    <svg class="w-3 h-3 text-white transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                                        <polyline points="7 7 17 7 17 17"></polyline>
+                                    </svg>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Navigation Columns (col-span-8) -->
+                <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8 lg:gap-10">
+                    <!-- Column 1: Products -->
+                    <div>
+                        <div class="text-xs font-bold tracking-wider text-white uppercase mb-4 flex items-center gap-2">
+                            <span>Products</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#126bdc] shadow-[0_0_8px_#126bdc]"></span>
+                        </div>
+                        <ul class="space-y-2.5 text-sm" role="list">
+                            <li>
+                                <a href="https://ownerhive.com/products/social-manager/" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Social Manager</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ownerhive.com/products/queue-manager/" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Queue Manager</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ownerhive.com/products/web-check-in/" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Web Check-In</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ownerhive.com/products/review-booster/" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Review Booster</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#portal" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Interactive Portal</span>
+                                    <span class="px-1.5 py-0.5 text-[10px] font-bold text-[#cd5fff] bg-[#cd5fff]/15 rounded-md border border-[#cd5fff]/30">Live</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Top Features -->
+                    <div>
+                        <div class="text-xs font-bold tracking-wider text-white uppercase mb-4 flex items-center gap-2">
+                            <span>Top Features</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#8b5cf6] shadow-[0_0_8px_#8b5cf6]"></span>
+                        </div>
+                        <ul class="space-y-2.5 text-sm" role="list">
+                            <li>
+                                <a href="https://ownerhive.com/top-features/#social-media-analytics" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Social Analytics</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ownerhive.com/top-features/#ai-post-generation" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">AI Post Generator</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ownerhive.com/top-features/#reply-with-ai" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Reply with AI</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ownerhive.com/top-features/#social-media-calendar" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Content Calendar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ownerhive.com/compare/" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Compare Solutions</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Free Tools & Hub -->
+                    <div>
+                        <div class="text-xs font-bold tracking-wider text-white uppercase mb-4 flex items-center gap-2">
+                            <span>Free Tools</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#10b981]"></span>
+                        </div>
+                        <ul class="space-y-2.5 text-sm" role="list">
+                            <li>
+                                <a href="https://ownerhive.com/free-tools/review-qr-poster-generator/" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">QR Poster Maker</span>
+                                    <span class="px-1.5 py-0.5 text-[10px] font-bold text-emerald-400 bg-emerald-500/15 rounded-md border border-emerald-500/30">Free</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ownerhive.com/free-tools/customer-wait-time-calculator/" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Wait Time Calc</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ownerhive.com/blogs/" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Blogs &amp; Insights</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ownerhive.com/product-updates/" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Changelog</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://app.ownerhive.com/" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Portal Login</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Company & Legal -->
+                    <div>
+                        <div class="text-xs font-bold tracking-wider text-white uppercase mb-4 flex items-center gap-2">
+                            <span>Company</span>
+                        </div>
+                        <ul class="space-y-2.5 text-sm" role="list">
+                            <li>
+                                <a href="https://ownerhive.com/about-us/" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">About OwnerHive</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ownerhive.com/why-ownerhive/" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Why Choose Us</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ownerhive.com/contact/" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Contact Support</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ownerhive.com/privacy-policy/" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Privacy Policy</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ownerhive.com/terms-and-conditions/" class="text-zinc-400 hover:text-white transition-colors duration-200 flex items-center gap-1.5 group">
+                                    <span class="transition-transform duration-200 group-hover:translate-x-1">Terms &amp; Conditions</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Strip: Social Icons, Back to Top, and Copyright -->
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-zinc-500">
+                <!-- Copyright & Legal Attribution -->
+                <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-2">
+                    <span>&copy; 2026 ElanceOne LLC. All rights reserved.</span>
+                    <a href="https://ownerhive.com/legal-regulatory-compliance-statement/" class="hover:text-zinc-300 transition-colors">Compliance Statement</a>
+                    <a href="https://ownerhive.com/privacy-policy/" class="hover:text-zinc-300 transition-colors">Privacy</a>
+                    <a href="https://ownerhive.com/terms-and-conditions/" class="hover:text-zinc-300 transition-colors">Terms</a>
+                </div>
+
+                <!-- Right Side: Social Media Icons + Back to Top -->
+                <div class="flex items-center gap-4">
+                    <!-- Social Links with glow hover -->
+                    <div class="flex items-center gap-2">
+                        <!-- Twitter / X -->
+                        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
+                            class="w-8 h-8 rounded-full bg-white/[0.05] border border-white/[0.08] hover:bg-white/[0.14] hover:border-white/[0.25] hover:text-white flex items-center justify-center text-zinc-400 transition-all hover:scale-105"
+                            aria-label="OwnerHive on X">
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer"
+                            class="w-8 h-8 rounded-full bg-white/[0.05] border border-white/[0.08] hover:bg-[#126bdc]/20 hover:border-[#126bdc]/40 hover:text-white flex items-center justify-center text-zinc-400 transition-all hover:scale-105"
+                            aria-label="OwnerHive on LinkedIn">
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                            </svg>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer"
+                            class="w-8 h-8 rounded-full bg-white/[0.05] border border-white/[0.08] hover:bg-[#cd5fff]/20 hover:border-[#cd5fff]/40 hover:text-white flex items-center justify-center text-zinc-400 transition-all hover:scale-105"
+                            aria-label="OwnerHive on YouTube">
+                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="h-4 w-px bg-white/[0.1]"></div>
+
+                    <!-- Back to Top Pill -->
+                    <a href="#top"
+                        class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.08] hover:bg-white/[0.12] hover:border-white/[0.22] text-zinc-300 hover:text-white text-xs font-semibold transition-all hover:-translate-y-0.5 shadow-sm group">
+                        <span>Back to top</span>
+                        <svg class="w-3 h-3 text-[#126bdc] transition-transform duration-200 group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
 
