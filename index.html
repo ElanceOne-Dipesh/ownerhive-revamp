@@ -39,48 +39,116 @@
         }
     </script>
     <style>
-        /* Interactive Expanding Card Accordion effect with Frosted Glass Outer Border */
-        .hostinger-accordion .accordion-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.25);
+        /* ==========================================================================
+           Hero Unified Cockpit / OS Dashboard Window Showcase
+           ========================================================================== */
+        .hero-cockpit-window {
+            background: rgba(15, 12, 36, 0.72);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow:
+                0 30px 80px -20px rgba(0, 0, 0, 0.65),
+                0 0 60px -15px rgba(139, 92, 246, 0.3),
+                inset 0 1px 2px rgba(255, 255, 255, 0.35);
             border-radius: 1.75rem;
-            padding: 0.65rem;
             position: relative;
             overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-cockpit-window:hover {
+            border-color: rgba(255, 255, 255, 0.28);
+            box-shadow:
+                0 35px 90px -20px rgba(0, 0, 0, 0.75),
+                0 0 80px -10px rgba(205, 95, 255, 0.35),
+                inset 0 1px 2px rgba(255, 255, 255, 0.45);
+        }
+
+        .cockpit-tab-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.85rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.65);
+            background: transparent;
+            border: 1px solid transparent;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: pointer;
-            transition: flex 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease, opacity 0.35s ease;
+            white-space: nowrap;
         }
 
-        @media (min-width: 1024px) {
-            .hostinger-accordion {
-                display: flex;
-                width: 100%;
-                gap: 1.25rem;
-                align-items: stretch;
-            }
-
-            .hostinger-accordion .accordion-card {
-                display: flex;
-                flex: 1 1 0%;
-                min-width: 0;
-                opacity: 0.9;
-            }
-
-            /* Active card has enhanced, clean frosted glass border frame */
-            .hostinger-accordion .accordion-card.is-active {
-                flex: 2.35 1 0%;
-                transform: translateY(-4px);
-                border: 1px solid rgba(255, 255, 255, 0.35);
-                background: rgba(255, 255, 255, 0.12);
-                box-shadow:
-                    0 20px 40px -12px rgba(0, 0, 0, 0.4),
-                    0 0 0 1px rgba(255, 255, 255, 0.12);
-                opacity: 1;
-            }
+        .cockpit-tab-btn:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.1);
         }
+
+        .cockpit-tab-btn.is-active {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.22);
+            box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+        }
+
+        .cockpit-panel {
+            display: none;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        .cockpit-panel.is-active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Dedicated Video Viewport styling */
+        .cockpit-video-viewport {
+            position: relative;
+            width: 100%;
+            border-radius: 1.25rem;
+            overflow: hidden;
+            background: #000000;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7);
+            aspect-ratio: 16 / 9;
+        }
+
+        .cockpit-video-viewport video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-control-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 9999px;
+            background: rgba(0, 0, 0, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            backdrop-filter: blur(8px);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .video-control-pill:hover {
+            background: rgba(0, 0, 0, 0.85);
+            border-color: #ffffff;
+            transform: scale(1.04);
+        }
+
+
         /* Features carousel track scrollbar hiding utility */
         #features-track {
             scrollbar-width: none;
@@ -2039,339 +2107,176 @@
                         </span>
                     </div>
 
-                    <!-- 4 Interactive Cards with Accordion Click Width Expansion -->
-                    <div class="hostinger-accordion flex flex-col lg:flex-row gap-5 max-w-[1400px] mx-auto text-left">
-
-                        <!-- Card 1: Build / Sunglasses Website Preview -->
-                        <div
-                            class="accordion-card is-active group relative flex flex-col justify-between cursor-pointer">
-
-
-                            <!-- Inner Content Viewport -->
-                            <div
-                                class="relative flex-1 min-h-[390px] rounded-[1.4rem] overflow-hidden bg-[#f4f9ff] flex flex-col justify-between">
-                                <!-- Inner Browser Chrome Header -->
-                                <div
-                                    class="flex items-center gap-3 px-3 py-2.5 bg-[#1e2030] border-b border-white/8 select-none">
-                                    <!-- macOS traffic light buttons (left side only) -->
-                                    <div class="flex items-center gap-1.5">
-                                        <span
-                                            class="w-3 h-3 rounded-full bg-[#ff5f57] shadow-[0_0_0_0.5px_#e0443e] cursor-pointer hover:brightness-90 transition-all"
-                                            title="Close"></span>
-                                        <span
-                                            class="w-3 h-3 rounded-full bg-[#febc2e] shadow-[0_0_0_0.5px_#dea123] cursor-pointer hover:brightness-90 transition-all"
-                                            title="Minimize"></span>
-                                        <span
-                                            class="w-3 h-3 rounded-full bg-[#28c840] shadow-[0_0_0_0.5px_#1aab29] cursor-pointer hover:brightness-90 transition-all"
-                                            title="Maximize"></span>
-                                    </div>
-                                    <!-- Address bar centered -->
-                                    <div
-                                        class="flex-1 mx-auto max-w-[180px] h-5 px-2 rounded-md bg-black/35 border border-white/10 flex items-center gap-1 text-[10px] text-zinc-400 font-medium truncate">
-                                        <svg class="w-2 h-2 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24"
-                                            fill="none" stroke="currentColor" stroke-width="2.5">
-                                            <rect x="3" y="11" width="18" height="11" rx="2"></rect>
-                                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                                        </svg>
-                                        <span class="truncate">ownerhive.com/store</span>
-                                    </div>
-                                    <span
-                                        class="ml-auto inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-violet-600/30 border border-violet-400/30 text-[#d6ccff] text-[9px] font-bold">✨
-                                        Build</span>
+                    <!-- Unified Luxury AI Cockpit / OS Dashboard Window Showcase -->
+                    <div class="hero-cockpit-window max-w-[960px] mx-auto text-left shadow-2xl">
+                        <!-- Window Browser Chrome Bar -->
+                        <div class="flex items-center justify-between px-4 sm:px-5 py-2.5 border-b border-white/10 bg-white/[0.03] select-none">
+                            <!-- Left: macOS Traffic lights -->
+                            <div class="flex items-center gap-2">
+                                <div class="flex items-center gap-1.5">
+                                    <span class="w-3 h-3 rounded-full bg-[#ff5f57] shadow-[0_0_0_0.5px_#e0443e]"></span>
+                                    <span class="w-3 h-3 rounded-full bg-[#febc2e] shadow-[0_0_0_0.5px_#dea123]"></span>
+                                    <span class="w-3 h-3 rounded-full bg-[#28c840] shadow-[0_0_0_0.5px_#1aab29]"></span>
                                 </div>
-                                <!-- In-page Store Header Bar -->
-                                <div
-                                    class="flex items-center justify-between px-5 py-4 bg-[#fcfcfc] border-b border-[#e4e4e7]">
-                                    <span class="text-xs font-black tracking-wider text-[#2e2e2e]">OWNERHIVE</span>
-                                    <div class="flex gap-3 text-[10px] font-semibold text-[#71717a]">
-                                        <span>Home</span>
-                                        <span>About</span>
-                                        <span>Products</span>
-                                        <span>Contact</span>
-                                    </div>
-                                </div>
-                                <div
-                                    class="relative flex-1 flex items-center justify-center p-5 overflow-hidden bg-[radial-gradient(circle_at_50%_30%,#ffffff_0%,#dbeaff_55%,#8b5cf6_100%)]">
-                                    <span
-                                        class="absolute text-7xl md:text-8xl font-black text-[#126bdc]/10 tracking-tighter uppercase select-none bottom-2">
-                                        HIVE
-                                    </span>
-                                    <svg class="relative z-10 w-4/5 max-w-[260px] drop-shadow-xl" viewBox="0 0 320 160"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M142 66C142 56 178 56 178 66" stroke="#facc15" stroke-width="16"
-                                            stroke-linecap="round" />
-                                        <ellipse cx="88" cy="74" rx="58" ry="46" fill="#fde047" stroke="#eab308"
-                                            stroke-width="6" />
-                                        <ellipse cx="88" cy="74" rx="42" ry="32" fill="#0284c7" />
-                                        <ellipse cx="88" cy="74" rx="38" ry="28" fill="#0369a1" />
-                                        <path d="M68 62C76 56 100 56 108 64" stroke="rgba(255,255,255,0.6)"
-                                            stroke-width="4" stroke-linecap="round" />
-                                        <ellipse cx="232" cy="74" rx="58" ry="46" fill="#fde047" stroke="#eab308"
-                                            stroke-width="6" />
-                                        <ellipse cx="232" cy="74" rx="42" ry="32" fill="#0284c7" />
-                                        <ellipse cx="232" cy="74" rx="38" ry="28" fill="#0369a1" />
-                                        <path d="M212 62C220 56 244 56 252 64" stroke="rgba(255,255,255,0.6)"
-                                            stroke-width="4" stroke-linecap="round" />
-                                        <rect x="22" y="60" width="14" height="12" rx="4" fill="#ca8a04" />
-                                        <rect x="284" y="60" width="14" height="12" rx="4" fill="#ca8a04" />
+                                <span class="text-xs font-bold text-white/80 tracking-wide pl-2 border-l border-white/10">OwnerHive OS</span>
+                            </div>
+
+                            <!-- Center: Simulated URL Bar -->
+                            <div class="flex items-center gap-1.5 px-3 py-1 rounded-md bg-black/40 border border-white/10 text-[11px] text-white/50 font-mono">
+                                <svg class="w-3 h-3 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                </svg>
+                                <span>app.ownerhive.com</span>
+                            </div>
+
+                            <!-- Right spacer to balance left items -->
+                            <div class="w-20 hidden sm:block"></div>
+                        </div>
+
+                        <!-- Product Selector Tabs (Centered under the header) -->
+                        <div class="flex items-center justify-center p-2.5 sm:p-3 border-b border-white/10 bg-white/[0.02]">
+                            <div class="flex items-center justify-center gap-1 sm:gap-1.5 p-1 rounded-xl bg-black/40 border border-white/10 overflow-x-auto max-w-full">
+                                <button type="button" class="cockpit-tab-btn is-active" data-cockpit-tab="social">
+                                    <svg class="w-3.5 h-3.5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
                                     </svg>
-                                    <div
-                                        class="absolute bottom-5 right-5 z-20 w-16 h-16 rounded-full bg-[#cd5fff] text-white flex items-center justify-center text-xs font-black shadow-lg rotate-6">
-                                        LIVE
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 2: Visual with Launch Pill -->
-                        <div class="accordion-card group relative flex flex-col justify-end cursor-pointer">
-                            <!-- Inner Visual Canvas -->
-                            <div
-                                class="relative flex-1 min-h-[390px] rounded-[1.4rem] overflow-hidden bg-[#0f58b6] flex flex-col justify-between">
-                                <!-- Inner Browser Chrome Header -->
-                                <div
-                                    class="relative z-20 flex items-center gap-3 px-3 py-2.5 bg-[#1e2030]/95 border-b border-white/8 select-none">
-                                    <!-- macOS traffic light buttons (left side only) -->
-                                    <div class="flex items-center gap-1.5">
-                                        <span
-                                            class="w-3 h-3 rounded-full bg-[#ff5f57] shadow-[0_0_0_0.5px_#e0443e] cursor-pointer hover:brightness-90 transition-all"
-                                            title="Close"></span>
-                                        <span
-                                            class="w-3 h-3 rounded-full bg-[#febc2e] shadow-[0_0_0_0.5px_#dea123] cursor-pointer hover:brightness-90 transition-all"
-                                            title="Minimize"></span>
-                                        <span
-                                            class="w-3 h-3 rounded-full bg-[#28c840] shadow-[0_0_0_0.5px_#1aab29] cursor-pointer hover:brightness-90 transition-all"
-                                            title="Maximize"></span>
-                                    </div>
-                                    <!-- Address bar centered -->
-                                    <div
-                                        class="flex-1 mx-auto max-w-[180px] h-5 px-2 rounded-md bg-black/35 border border-white/10 flex items-center gap-1 text-[10px] text-zinc-400 font-medium truncate">
-                                        <svg class="w-2 h-2 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24"
-                                            fill="none" stroke="currentColor" stroke-width="2.5">
-                                            <rect x="3" y="11" width="18" height="11" rx="2"></rect>
-                                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                                        </svg>
-                                        <span class="truncate">ownerhive.com/launch</span>
-                                    </div>
-                                    <span
-                                        class="ml-auto inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-blue-600/30 border border-blue-400/30 text-[#cce2ff] text-[9px] font-bold">🚀
-                                        Launch</span>
-                                </div>
-                                <div class="relative flex-1 flex items-end p-5">
-                                    <svg class="absolute inset-0 w-full h-full object-cover" viewBox="0 0 300 420"
-                                        preserveAspectRatio="xMidYMid slice" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <defs>
-                                            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
-                                                <stop offset="0%" stop-color="#38bdf8" />
-                                                <stop offset="60%" stop-color="#60a5fa" />
-                                                <stop offset="100%" stop-color="#93c5fd" />
-                                            </linearGradient>
-                                            <linearGradient id="skinGrad" x1="0" y1="0" x2="1" y2="1">
-                                                <stop offset="0%" stop-color="#ea580c" />
-                                                <stop offset="40%" stop-color="#c2410c" />
-                                                <stop offset="100%" stop-color="#9a3412" />
-                                            </linearGradient>
-                                        </defs>
-                                        <rect width="300" height="420" fill="url(#skyGrad)" />
-                                        <circle cx="240" cy="100" r="120" fill="rgba(254, 240, 138, 0.45)" />
-                                        <path
-                                            d="M110 420C110 320 125 240 140 180C148 145 132 118 122 135C114 150 110 185 102 210C98 175 96 142 88 152C80 162 82 205 78 225C74 190 70 170 62 178C56 185 58 220 54 250C48 220 40 215 36 226C30 240 38 310 42 420Z"
-                                            fill="url(#skinGrad)" />
-                                        <ellipse cx="124" cy="132" rx="4" ry="7" fill="#dc2626" />
-                                        <ellipse cx="87" cy="150" rx="4" ry="7" fill="#dc2626" />
-                                        <ellipse cx="61" cy="176" rx="4" ry="6" fill="#dc2626" />
-                                        <ellipse cx="37" cy="224" rx="4" ry="6" fill="#dc2626" />
-                                        <g transform="translate(130, 95) rotate(-22) scale(0.48)">
-                                            <path d="M142 66C142 56 178 56 178 66" stroke="#facc15" stroke-width="16"
-                                                stroke-linecap="round" />
-                                            <ellipse cx="88" cy="74" rx="58" ry="46" fill="#fde047" stroke="#ca8a04"
-                                                stroke-width="6" />
-                                            <ellipse cx="88" cy="74" rx="42" ry="32" fill="#0284c7" />
-                                            <ellipse cx="232" cy="74" rx="58" ry="46" fill="#fde047" stroke="#ca8a04"
-                                                stroke-width="6" />
-                                            <ellipse cx="232" cy="74" rx="42" ry="32" fill="#0284c7" />
-                                        </g>
+                                    <span>Social Manager</span>
+                                </button>
+                                <button type="button" class="cockpit-tab-btn" data-cockpit-tab="queue">
+                                    <svg class="w-3.5 h-3.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                                     </svg>
-                                    <div
-                                        class="relative z-10 inline-flex items-center gap-3 px-5 py-2.5 mb-2 ml-1 rounded-full bg-[#fcfcfc] text-[#2e2e2e] text-lg font-bold shadow-2xl backdrop-blur-md">
-                                        <div
-                                            class="grid place-items-center w-9 h-9 rounded-full bg-[#cd5fff]/20 text-[#8b5cf6]">
-                                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2">
-                                                <circle cx="12" cy="12" r="10"></circle>
-                                                <line x1="2" y1="12" x2="22" y2="12"></line>
-                                                <path
-                                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                        <span>launch</span>
+                                    <span>Queue Manager</span>
+                                </button>
+                                <button type="button" class="cockpit-tab-btn" data-cockpit-tab="checkin">
+                                    <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                                    </svg>
+                                    <span>Web Check-In</span>
+                                </button>
+                                <button type="button" class="cockpit-tab-btn" data-cockpit-tab="reviews">
+                                    <svg class="w-3.5 h-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                    </svg>
+                                    <span>Review Booster</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Panel 1: Social Manager Video Showcase -->
+                        <div class="cockpit-panel is-active p-3 sm:p-5" data-cockpit-panel="social">
+                            <div class="cockpit-video-viewport group relative">
+                                <video class="w-full h-full object-cover" loop muted playsinline autoplay preload="metadata" poster="assets/ownerhive-ai-command-hub.jpg">
+                                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-auto">
+                                    <div class="flex items-center gap-2">
+                                        <button type="button" class="video-control-pill video-toggle-btn" aria-label="Pause video">
+                                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                            <span class="btn-text">Pause Demo</span>
+                                        </button>
+                                        <button type="button" class="video-control-pill video-mute-btn" aria-label="Toggle audio">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /><path stroke-linecap="round" stroke-linejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>
+                                            <span class="btn-text">Mute</span>
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="px-3 py-1 rounded-full text-[11px] font-semibold text-purple-300 bg-purple-500/20 border border-purple-500/30 backdrop-blur-md">
+                                            Social Manager 4K Preview
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Card 3: E-Commerce Product List -->
-                        <div class="accordion-card group relative flex flex-col justify-center cursor-pointer">
-                            <!-- Inner Content -->
-                            <div
-                                class="relative flex-1 min-h-[390px] rounded-[1.4rem] overflow-hidden bg-[#f4f9ff] border border-[#e6e8ee] flex flex-col">
-                                <!-- Inner Browser Chrome Header -->
-                                <div
-                                    class="flex items-center gap-3 px-3 py-2.5 bg-[#1e2030] border-b border-white/8 select-none">
-                                    <!-- macOS traffic light buttons (left side only) -->
-                                    <div class="flex items-center gap-1.5">
-                                        <span
-                                            class="w-3 h-3 rounded-full bg-[#ff5f57] shadow-[0_0_0_0.5px_#e0443e] cursor-pointer hover:brightness-90 transition-all"
-                                            title="Close"></span>
-                                        <span
-                                            class="w-3 h-3 rounded-full bg-[#febc2e] shadow-[0_0_0_0.5px_#dea123] cursor-pointer hover:brightness-90 transition-all"
-                                            title="Minimize"></span>
-                                        <span
-                                            class="w-3 h-3 rounded-full bg-[#28c840] shadow-[0_0_0_0.5px_#1aab29] cursor-pointer hover:brightness-90 transition-all"
-                                            title="Maximize"></span>
+                        <!-- Panel 2: Queue Manager Video Showcase -->
+                        <div class="cockpit-panel p-3 sm:p-5" data-cockpit-panel="queue">
+                            <div class="cockpit-video-viewport group relative">
+                                <video class="w-full h-full object-cover" loop muted playsinline preload="metadata" poster="assets/ownerhive-features-banner.png">
+                                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-auto">
+                                    <div class="flex items-center gap-2">
+                                        <button type="button" class="video-control-pill video-toggle-btn" aria-label="Pause video">
+                                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                            <span class="btn-text">Play Demo</span>
+                                        </button>
+                                        <button type="button" class="video-control-pill video-mute-btn" aria-label="Toggle audio">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /><path stroke-linecap="round" stroke-linejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>
+                                            <span class="btn-text">Mute</span>
+                                        </button>
                                     </div>
-                                    <!-- Address bar centered -->
-                                    <div
-                                        class="flex-1 mx-auto max-w-[180px] h-5 px-2 rounded-md bg-black/35 border border-white/10 flex items-center gap-1 text-[10px] text-zinc-400 font-medium truncate">
-                                        <svg class="w-2 h-2 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24"
-                                            fill="none" stroke="currentColor" stroke-width="2.5">
-                                            <rect x="3" y="11" width="18" height="11" rx="2"></rect>
-                                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                                        </svg>
-                                        <span class="truncate">app.ownerhive.com/ops</span>
-                                    </div>
-                                    <span
-                                        class="ml-auto inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-emerald-600/30 border border-emerald-400/30 text-[#bbf7d0] text-[9px] font-bold">📊
-                                        Pulse</span>
-                                </div>
-                                <!-- Dashboard Content -->
-                                <div class="flex-1 p-4 flex flex-col justify-center gap-3">
-                                    <div
-                                        class="flex items-center gap-3 p-3.5 rounded-xl bg-[#fcfcfc] shadow-sm border border-[#e6e8ee]">
-                                        <div
-                                            class="grid place-items-center w-11 h-11 rounded-lg bg-[#126bdc] border border-[#126bdc] text-white flex-shrink-0">
-                                            <svg class="w-7 h-7" viewBox="0 0 40 24" fill="none">
-                                                <rect x="2" y="4" width="16" height="14" rx="3" fill="#1e293b" />
-                                                <rect x="22" y="4" width="16" height="14" rx="3" fill="#1e293b" />
-                                                <path d="M18 10h4" stroke="#ca8a04" stroke-width="2" />
-                                            </svg>
-                                        </div>
-                                        <span class="text-sm font-bold text-[#2e2e2e]">Daily overview</span>
-                                    </div>
-
-                                    <div
-                                        class="flex items-center gap-3 p-3.5 rounded-xl bg-[#fcfcfc] shadow-sm border border-[#e6e8ee]">
-                                        <div
-                                            class="grid place-items-center w-11 h-11 rounded-lg bg-[#126bdc] border border-[#126bdc] text-white flex-shrink-0">
-                                            <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none">
-                                                <circle cx="16" cy="10" r="5" stroke="#0284c7" stroke-width="2" />
-                                                <rect x="12" y="14" width="8" height="14" rx="2" fill="#f43f5e" />
-                                                <text x="16" y="24" font-size="6" font-weight="900" fill="white"
-                                                    text-anchor="middle">SUN</text>
-                                            </svg>
-                                        </div>
-                                        <span class="text-sm font-bold text-[#2e2e2e]">Team pulse</span>
-                                    </div>
-
-                                    <div
-                                        class="flex items-center gap-3 p-3.5 rounded-xl bg-[#fcfcfc] shadow-sm border border-[#e6e8ee]">
-                                        <div
-                                            class="grid place-items-center w-11 h-11 rounded-lg bg-[#126bdc] border border-[#126bdc] text-white flex-shrink-0">
-                                            <svg class="w-7 h-7" viewBox="0 0 40 24" fill="none">
-                                                <ellipse cx="10" cy="12" rx="8" ry="8" fill="#facc15" stroke="#ca8a04"
-                                                    stroke-width="2" />
-                                                <ellipse cx="30" cy="12" rx="8" ry="8" fill="#facc15" stroke="#ca8a04"
-                                                    stroke-width="2" />
-                                                <ellipse cx="10" cy="12" rx="5" ry="5" fill="#0284c7" />
-                                                <ellipse cx="30" cy="12" rx="5" ry="5" fill="#0284c7" />
-                                                <path d="M18 12h4" stroke="#ca8a04" stroke-width="2" />
-                                            </svg>
-                                        </div>
-                                        <span class="text-sm font-bold text-[#2e2e2e]">Growth signals</span>
+                                    <div class="flex items-center gap-2">
+                                        <span class="px-3 py-1 rounded-full text-[11px] font-semibold text-blue-300 bg-blue-500/20 border border-blue-500/30 backdrop-blur-md">
+                                            Queue Manager & TV Board Live
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Card 4: AI Assistant / Agent -->
-                        <div class="accordion-card group relative flex flex-col justify-between cursor-pointer">
-                            <!-- Inner Content -->
-                            <div
-                                class="relative flex-1 min-h-[390px] rounded-[1.4rem] overflow-hidden bg-[#fcfcfc] border border-[#e6e8ee] flex flex-col">
-                                <!-- Inner Browser Chrome Header -->
-                                <div
-                                    class="flex items-center gap-3 px-3 py-2.5 bg-[#1e2030] border-b border-white/8 select-none">
-                                    <!-- macOS traffic light buttons (left side only) -->
-                                    <div class="flex items-center gap-1.5">
-                                        <span
-                                            class="w-3 h-3 rounded-full bg-[#ff5f57] shadow-[0_0_0_0.5px_#e0443e] cursor-pointer hover:brightness-90 transition-all"
-                                            title="Close"></span>
-                                        <span
-                                            class="w-3 h-3 rounded-full bg-[#febc2e] shadow-[0_0_0_0.5px_#dea123] cursor-pointer hover:brightness-90 transition-all"
-                                            title="Minimize"></span>
-                                        <span
-                                            class="w-3 h-3 rounded-full bg-[#28c840] shadow-[0_0_0_0.5px_#1aab29] cursor-pointer hover:brightness-90 transition-all"
-                                            title="Maximize"></span>
+                        <!-- Panel 3: Web Check-In Video Showcase -->
+                        <div class="cockpit-panel p-3 sm:p-5" data-cockpit-panel="checkin">
+                            <div class="cockpit-video-viewport group relative">
+                                <video class="w-full h-full object-cover" loop muted playsinline preload="metadata" poster="assets/ownerhive-monitor-preview.png">
+                                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-auto">
+                                    <div class="flex items-center gap-2">
+                                        <button type="button" class="video-control-pill video-toggle-btn" aria-label="Pause video">
+                                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                            <span class="btn-text">Play Demo</span>
+                                        </button>
+                                        <button type="button" class="video-control-pill video-mute-btn" aria-label="Toggle audio">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /><path stroke-linecap="round" stroke-linejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>
+                                            <span class="btn-text">Mute</span>
+                                        </button>
                                     </div>
-                                    <!-- Address bar centered -->
-                                    <div
-                                        class="flex-1 mx-auto max-w-[180px] h-5 px-2 rounded-md bg-black/35 border border-white/10 flex items-center gap-1 text-[10px] text-zinc-400 font-medium truncate">
-                                        <svg class="w-2 h-2 text-emerald-400 flex-shrink-0" viewBox="0 0 24 24"
-                                            fill="none" stroke="currentColor" stroke-width="2.5">
-                                            <rect x="3" y="11" width="18" height="11" rx="2"></rect>
-                                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                                        </svg>
-                                        <span class="truncate">app.ownerhive.com/ai</span>
-                                    </div>
-                                    <span
-                                        class="ml-auto inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-fuchsia-600/30 border border-fuchsia-400/30 text-[#f5d0fe] text-[9px] font-bold">⚡
-                                        AI</span>
-                                </div>
-                                <!-- AI Body -->
-                                <div class="flex-1 p-4 flex flex-col justify-between text-[#2e2e2e]">
-                                    <div class="text-center pt-2">
-                                        <div
-                                            class="inline-flex items-center justify-center w-11 h-11 mb-2.5 text-[#8b5cf6]">
-                                            <svg class="w-9 h-9" viewBox="0 0 32 32" fill="none">
-                                                <path d="M16 2L20 12L30 16L20 20L16 30L12 20L2 16L12 12L16 2Z"
-                                                    fill="url(#agentGrad)" />
-                                                <defs>
-                                                    <linearGradient id="agentGrad" x1="2" y1="2" x2="30" y2="30">
-                                                        <stop offset="0%" stop-color="#7c3aed" />
-                                                        <stop offset="100%" stop-color="#3b82f6" />
-                                                    </linearGradient>
-                                                </defs>
-                                            </svg>
-                                        </div>
-                                        <h3 class="text-lg font-black text-[#2e2e2e] mb-1">Owner snapshot</h3>
-                                        <p class="text-xs text-slate-500 font-medium">Your next best actions, in one
-                                            place.
-                                        </p>
-                                    </div>
-                                    <div class="flex flex-col gap-2.5 mt-4">
-                                        <a href="#contact"
-                                            class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 text-xs font-semibold text-slate-700 shadow-sm hover:border-violet-300 hover:text-indigo-600 hover:translate-x-1 transition-all">
-                                            <span class="text-slate-900 font-bold">↗</span>
-                                            <span class="truncate">Review this week’s performance</span>
-                                        </a>
-                                        <a href="#contact"
-                                            class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 text-xs font-semibold text-slate-700 shadow-sm hover:border-violet-300 hover:text-indigo-600 hover:translate-x-1 transition-all">
-                                            <span class="text-slate-900 font-bold">↗</span>
-                                            <span class="truncate">Approve queued content</span>
-                                        </a>
-                                        <a href="#contact"
-                                            class="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-slate-200 text-xs font-semibold text-slate-700 shadow-sm hover:border-violet-300 hover:text-indigo-600 hover:translate-x-1 transition-all">
-                                            <span class="text-slate-900 font-bold">↗</span>
-                                            <span class="truncate">See what needs attention</span>
-                                        </a>
+                                    <div class="flex items-center gap-2">
+                                        <span class="px-3 py-1 rounded-full text-[11px] font-semibold text-emerald-300 bg-emerald-500/20 border border-emerald-500/30 backdrop-blur-md">
+                                            Web Check-In Mobile Flow
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- Panel 4: Review Booster Video Showcase -->
+                        <div class="cockpit-panel p-3 sm:p-5" data-cockpit-panel="reviews">
+                            <div class="cockpit-video-viewport group relative">
+                                <video class="w-full h-full object-cover" loop muted playsinline preload="metadata" poster="assets/ownerhive-faq-support.jpg">
+                                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
+                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-auto">
+                                    <div class="flex items-center gap-2">
+                                        <button type="button" class="video-control-pill video-toggle-btn" aria-label="Pause video">
+                                            <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                            <span class="btn-text">Play Demo</span>
+                                        </button>
+                                        <button type="button" class="video-control-pill video-mute-btn" aria-label="Toggle audio">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /><path stroke-linecap="round" stroke-linejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>
+                                            <span class="btn-text">Mute</span>
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="px-3 py-1 rounded-full text-[11px] font-semibold text-amber-300 bg-amber-500/20 border border-amber-500/30 backdrop-blur-md">
+                                            Review Booster & SMS Automation
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
 
                     <!-- Trustpilot Rating Banner -->
                     <div class="flex items-center justify-center gap-3 mt-10 text-sm font-medium text-white flex-wrap">
@@ -4053,15 +3958,70 @@
                     });
                 }
 
-                // 4. Interactive Card Accordion in Hero (Click to expand)
-                if (accordion && cards.length > 0) {
-                    cards.forEach(card => {
-                        card.addEventListener('click', () => {
-                            cards.forEach(c => c.classList.remove('is-active'));
-                            card.classList.add('is-active');
-                        });
+                // 4. Hero Unified Cockpit OS Dashboard Tabs Switcher & Video Controller
+                const cockpitTabBtns = document.querySelectorAll('.cockpit-tab-btn');
+                const cockpitPanels = document.querySelectorAll('.cockpit-panel');
+
+                const switchCockpitTab = (targetTabKey) => {
+                    if (!targetTabKey) return;
+                    cockpitTabBtns.forEach(btn => {
+                        btn.classList.toggle('is-active', btn.dataset.cockpitTab === targetTabKey);
                     });
-                }
+                    cockpitPanels.forEach(panel => {
+                        const isMatch = panel.dataset.cockpitPanel === targetTabKey;
+                        panel.classList.toggle('is-active', isMatch);
+                        const video = panel.querySelector('video');
+                        const toggleBtn = panel.querySelector('.video-toggle-btn');
+                        if (video) {
+                            if (isMatch) {
+                                video.currentTime = 0;
+                                video.play().catch(() => {});
+                                if (toggleBtn) {
+                                    toggleBtn.querySelector('.btn-text').textContent = 'Pause Demo';
+                                }
+                            } else {
+                                video.pause();
+                                if (toggleBtn) {
+                                    toggleBtn.querySelector('.btn-text').textContent = 'Play Demo';
+                                }
+                            }
+                        }
+                    });
+                };
+
+                cockpitTabBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        switchCockpitTab(btn.dataset.cockpitTab);
+                    });
+                });
+
+                // Attach Video Play/Pause and Mute/Unmute Handlers for each panel
+                cockpitPanels.forEach(panel => {
+                    const video = panel.querySelector('video');
+                    const toggleBtn = panel.querySelector('.video-toggle-btn');
+                    const muteBtn = panel.querySelector('.video-mute-btn');
+
+                    if (video && toggleBtn) {
+                        toggleBtn.addEventListener('click', () => {
+                            if (video.paused) {
+                                video.play().catch(() => {});
+                                toggleBtn.querySelector('.btn-text').textContent = 'Pause Demo';
+                            } else {
+                                video.pause();
+                                toggleBtn.querySelector('.btn-text').textContent = 'Play Demo';
+                            }
+                        });
+                    }
+
+                    if (video && muteBtn) {
+                        muteBtn.addEventListener('click', () => {
+                            video.muted = !video.muted;
+                            muteBtn.querySelector('.btn-text').textContent = video.muted ? 'Unmute' : 'Mute';
+                        });
+                    }
+                });
+
+
 
                 // 4b. Feature suite — tabbed AI product shell
                 const toolSuite = document.getElementById('tool-suite');
