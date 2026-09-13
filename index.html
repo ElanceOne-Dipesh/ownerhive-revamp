@@ -3916,9 +3916,10 @@
                 window.addEventListener('scroll', syncHeader, { passive: true });
                 syncHeader();
 
-                // 2. Click-Only Mega Menu Dropdown Interaction
+                // 2. Hover Mega Menu Dropdown Interaction
                 let currentOpenPanel = null;
                 let currentActiveBtn = null;
+                let closeTimer = null;
 
                 const closeAllDropdowns = () => {
                     dropdownPanels.forEach(panel => panel.classList.remove('is-open'));
@@ -3966,28 +3967,35 @@
                 dropdownWrappers.forEach(wrapper => {
                     const targetId = wrapper.getAttribute('data-target');
                     const triggerBtn = wrapper.querySelector('.nav-item-btn');
+                    const panel = targetId ? document.getElementById(targetId) : null;
 
-                    if (triggerBtn) {
-                        triggerBtn.addEventListener('click', (e) => {
+                    // Open on mouseenter the wrapper
+                    wrapper.addEventListener('mouseenter', () => {
+                        if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+                        if (targetId) openDropdown(targetId, triggerBtn);
+                    });
+
+                    // Start close timer when leaving wrapper
+                    wrapper.addEventListener('mouseleave', () => {
+                        closeTimer = setTimeout(closeAllDropdowns, 120);
+                    });
+
+                    // Keep open when hovering the panel itself
+                    if (panel) {
+                        panel.addEventListener('mouseenter', () => {
+                            if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+                        });
+                        panel.addEventListener('mouseleave', () => {
+                            closeTimer = setTimeout(closeAllDropdowns, 120);
+                        });
+                        // Close on internal anchor click
+                        panel.addEventListener('click', (e) => {
                             e.stopPropagation();
-                            const isOpen = triggerBtn.classList.contains('is-active') && targetId && document.getElementById(targetId)?.classList.contains('is-open');
-                            if (isOpen) {
+                            if (e.target.closest('a')) {
                                 closeAllDropdowns();
-                            } else {
-                                openDropdown(targetId, triggerBtn);
                             }
                         });
                     }
-                });
-
-                dropdownPanels.forEach(panel => {
-                    panel.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        // Close if clicking an internal anchor link
-                        if (e.target.closest('a')) {
-                            closeAllDropdowns();
-                        }
-                    });
                 });
 
                 // Close on outside click
