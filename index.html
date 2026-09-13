@@ -91,11 +91,26 @@
         }
 
 
+        /* Navbar Base and Transition control */
+        #site-header {
+            transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease, backdrop-filter 0.25s ease;
+        }
+
         /* Navbar Unscrolled (Hero Background) State */
         #site-header.is-unscrolled {
-            background-color: transparent;
-            border-bottom-color: transparent;
+            background-color: transparent !important;
+            border-bottom-color: transparent !important;
             color: #ffffff;
+        }
+
+        /* Navbar Scrolled State */
+        #site-header.is-scrolled {
+            background-color: rgba(255, 255, 255, 0.96) !important;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid #e4e4e7 !important;
+            color: #09090b !important;
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
         }
 
         /* Navbar Logo Presentation */
@@ -106,7 +121,7 @@
             padding: 0 !important;
             border-radius: 0 !important;
             box-shadow: none !important;
-            transition: all 0.25s ease;
+            transition: opacity 0.2s ease;
         }
 
         .site-logo-img {
@@ -116,6 +131,14 @@
         }
 
         /* Swap logo versions based on navbar scroll state & dropdown open state */
+        /* Default: hide dark logo initially when unscrolled to eliminate reload blink */
+        .site-logo-dark {
+            display: none !important;
+        }
+        .site-logo-light {
+            display: block !important;
+        }
+
         /* Unscrolled default (over dark hero gradient): show inverted white logo */
         #site-header.is-unscrolled .site-logo-dark {
             display: none !important;
@@ -964,56 +987,67 @@
         .tool-signal-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.65rem;
             align-items: center;
+            font-size: 0.8125rem;
+            color: #e9d5ff;
         }
 
         .tool-signal span.chip {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            padding: 0.42rem 0.8rem;
-            border-radius: 9999px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            color: #f3e8ff;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: all 0.2s ease;
+            gap: 0.35rem;
+            padding: 0;
+            border-radius: 0;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.8125rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            transition: color 0.2s ease;
         }
 
         .tool-signal span.chip:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(139, 92, 246, 0.45);
+            background: transparent;
+            border-color: transparent;
             color: #ffffff;
+        }
+
+        /* Divider '|' between chips */
+        .tool-signal-tags span.chip + span.chip::before {
+            content: '|';
+            margin-right: 0.65rem;
+            color: rgba(255, 255, 255, 0.3);
+            font-weight: 300;
+            user-select: none;
         }
 
         .tool-explore-link {
             display: inline-flex;
             align-items: center;
             gap: 0.4rem;
-            font-size: 0.8125rem;
-            font-weight: 700;
+            font-size: 0.875rem;
+            font-weight: 600;
             color: #ffffff;
             transition: all 0.2s ease;
-            text-decoration: none;
-            padding: 0.38rem 0.85rem;
-            border-radius: 9999px;
-            background: linear-gradient(135deg, rgba(18, 107, 220, 0.3), rgba(139, 92, 246, 0.3));
-            border: 1px solid rgba(139, 92, 246, 0.45);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1.5px;
+            text-decoration-color: rgba(255, 255, 255, 0.4);
+            padding: 0.25rem 0;
+            background: transparent;
+            border: none;
         }
 
         .tool-explore-link:hover {
-            background: linear-gradient(135deg, #126bdc 0%, #8b5cf6 100%);
-            border-color: transparent;
             color: #ffffff;
-            transform: translateX(2px);
-            box-shadow: 0 0 22px rgba(139, 92, 246, 0.55);
+            text-decoration-color: #ffffff;
+            transform: translateX(3px);
+            background: transparent;
+            box-shadow: none;
         }
 
         /* ==========================================================================
@@ -1127,6 +1161,10 @@
             line-height: 1.55;
             color: #71717a;
             margin-bottom: 1.25rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         /* Bottom Action Row with Signature Notched Profile */
@@ -1348,11 +1386,18 @@
     class="bg-[#fcfcfc] text-[#09090b] font-sans antialiased overflow-x-clip selection:bg-[#126bdc] selection:text-white">
 
     <!-- Header Navigation -->
-    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 is-unscrolled">
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 is-unscrolled">
+        <script>
+            // Synchronously determine header scroll state before first paint to prevent blinking on reload
+            if (typeof window !== 'undefined' && window.scrollY > 20) {
+                document.getElementById('site-header').classList.remove('is-unscrolled');
+                document.getElementById('site-header').classList.add('is-scrolled');
+            }
+        </script>
         <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Squint-Style Nav Island (Logo + Navigation: turns white on dropdown hover) -->
             <div id="nav-island"
-                class="nav-island flex items-center justify-between flex-1 mr-4 lg:mr-6 h-14 sm:h-16 px-3.5 sm:px-5 rounded-2xl transition-all duration-300">
+                class="nav-island flex items-center justify-between flex-1 mr-4 lg:mr-6 h-14 sm:h-16 px-3.5 sm:px-5 rounded-2xl">
                 <!-- Brand Logo -->
                 <a href="#top" class="site-logo-wrap inline-flex items-center shrink-0 hover:opacity-95 transition-all"
                     aria-label="OwnerHive home">
@@ -1361,7 +1406,7 @@
                         class="site-logo-img site-logo-light h-8 sm:h-9 w-auto object-contain" width="1536" height="366">
                     <!-- Standard (dark) logo for scrolled state and opened dropdowns -->
                     <img src="assets/ownerhive-logo.webp" alt="OwnerHive"
-                        class="site-logo-img site-logo-dark h-8 sm:h-9 w-auto object-contain" width="1536" height="366">
+                        class="site-logo-img site-logo-dark h-8 sm:h-9 w-auto object-contain" width="1536" height="366" style="display: none;">
                 </a>
 
                 <!-- Desktop Nav (Squint-style layout) -->
@@ -2842,7 +2887,7 @@
                         role="region" aria-label="Features carousel" tabindex="0">
 
                         <!-- Card 1: Social Media Management -->
-                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-[#cd5fff]/50 backdrop-blur-xl shadow-xl hover:shadow-[0_12px_30px_-8px_rgba(205,95,255,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
+                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-[#cd5fff]/50 backdrop-blur-xl hover:shadow-[0_12px_30px_-8px_rgba(205,95,255,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
                             <div class="absolute inset-0 bg-gradient-to-b from-[#cd5fff]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                             <div class="relative z-10 flex items-center justify-between">
                                 <div class="w-11 h-11 rounded-xl bg-[#8b5cf6]/20 border border-[#8b5cf6]/35 flex items-center justify-center text-[#cd5fff] group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(139,92,246,0.4)] transition-all duration-300">
@@ -2868,7 +2913,7 @@
                         </div>
 
                         <!-- Card 2: Automated Posting -->
-                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-sky-400/50 backdrop-blur-xl shadow-xl hover:shadow-[0_12px_30px_-8px_rgba(56,189,248,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
+                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-sky-400/50 backdrop-blur-xl hover:shadow-[0_12px_30px_-8px_rgba(56,189,248,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
                             <div class="absolute inset-0 bg-gradient-to-b from-sky-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                             <div class="relative z-10 flex items-center justify-between">
                                 <div class="w-11 h-11 rounded-xl bg-[#126bdc]/20 border border-[#126bdc]/35 flex items-center justify-center text-sky-300 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(18,107,220,0.4)] transition-all duration-300">
@@ -2893,7 +2938,7 @@
                         </div>
 
                         <!-- Card 3: Analytics & Insights -->
-                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-[#cd5fff]/50 backdrop-blur-xl shadow-xl hover:shadow-[0_12px_30px_-8px_rgba(205,95,255,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
+                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-[#cd5fff]/50 backdrop-blur-xl hover:shadow-[0_12px_30px_-8px_rgba(205,95,255,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
                             <div class="absolute inset-0 bg-gradient-to-b from-[#cd5fff]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                             <div class="relative z-10 flex items-center justify-between">
                                 <div class="w-11 h-11 rounded-xl bg-[#8b5cf6]/20 border border-[#8b5cf6]/35 flex items-center justify-center text-[#cd5fff] group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(139,92,246,0.4)] transition-all duration-300">
@@ -2919,7 +2964,7 @@
                         </div>
 
                         <!-- Card 4: Queue Management -->
-                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-sky-400/50 backdrop-blur-xl shadow-xl hover:shadow-[0_12px_30px_-8px_rgba(56,189,248,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
+                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-sky-400/50 backdrop-blur-xl hover:shadow-[0_12px_30px_-8px_rgba(56,189,248,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
                             <div class="absolute inset-0 bg-gradient-to-b from-sky-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                             <div class="relative z-10 flex items-center justify-between">
                                 <div class="w-11 h-11 rounded-xl bg-[#126bdc]/20 border border-[#126bdc]/35 flex items-center justify-center text-sky-300 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(18,107,220,0.4)] transition-all duration-300">
@@ -2946,7 +2991,7 @@
                         </div>
 
                         <!-- Card 5: Review Booster -->
-                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-[#cd5fff]/50 backdrop-blur-xl shadow-xl hover:shadow-[0_12px_30px_-8px_rgba(205,95,255,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
+                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-[#cd5fff]/50 backdrop-blur-xl hover:shadow-[0_12px_30px_-8px_rgba(205,95,255,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
                             <div class="absolute inset-0 bg-gradient-to-b from-[#cd5fff]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                             <div class="relative z-10 flex items-center justify-between">
                                 <div class="w-11 h-11 rounded-xl bg-[#8b5cf6]/20 border border-[#8b5cf6]/35 flex items-center justify-center text-[#cd5fff] group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(139,92,246,0.4)] transition-all duration-300">
@@ -2970,7 +3015,7 @@
                         </div>
 
                         <!-- Card 6: AI Content Studio -->
-                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-sky-400/50 backdrop-blur-xl shadow-xl hover:shadow-[0_12px_30px_-8px_rgba(56,189,248,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
+                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-sky-400/50 backdrop-blur-xl hover:shadow-[0_12px_30px_-8px_rgba(56,189,248,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
                             <div class="absolute inset-0 bg-gradient-to-b from-sky-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                             <div class="relative z-10 flex items-center justify-between">
                                 <div class="w-11 h-11 rounded-xl bg-[#126bdc]/20 border border-[#126bdc]/35 flex items-center justify-center text-sky-300 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(18,107,220,0.4)] transition-all duration-300">
@@ -2998,7 +3043,7 @@
                         </div>
 
                         <!-- Card 7: Team Collaboration -->
-                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-[#cd5fff]/50 backdrop-blur-xl shadow-xl hover:shadow-[0_12px_30px_-8px_rgba(205,95,255,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
+                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-[#cd5fff]/50 backdrop-blur-xl hover:shadow-[0_12px_30px_-8px_rgba(205,95,255,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
                             <div class="absolute inset-0 bg-gradient-to-b from-[#cd5fff]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                             <div class="relative z-10 flex items-center justify-between">
                                 <div class="w-11 h-11 rounded-xl bg-[#8b5cf6]/20 border border-[#8b5cf6]/35 flex items-center justify-center text-[#cd5fff] group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(139,92,246,0.4)] transition-all duration-300">
@@ -3024,7 +3069,7 @@
                         </div>
 
                         <!-- Card 8: Enterprise Security -->
-                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-sky-400/50 backdrop-blur-xl shadow-xl hover:shadow-[0_12px_30px_-8px_rgba(56,189,248,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
+                        <div class="features-card group flex-none w-full sm:w-[calc((100%-20px)/2)] lg:w-[calc((100%-60px)/4)] min-h-[220px] flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/65 hover:bg-zinc-900/85 border border-white/15 hover:border-sky-400/50 backdrop-blur-xl hover:shadow-[0_12px_30px_-8px_rgba(56,189,248,0.25)] hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden cursor-pointer" style="scroll-snap-align: start;">
                             <div class="absolute inset-0 bg-gradient-to-b from-sky-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                             <div class="relative z-10 flex items-center justify-between">
                                 <div class="w-11 h-11 rounded-xl bg-[#126bdc]/20 border border-[#126bdc]/35 flex items-center justify-center text-sky-300 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(18,107,220,0.4)] transition-all duration-300">
@@ -3124,7 +3169,7 @@
                             <span class="moodboard-card-meta">OWNERHIVE AI • SAVE 10+ HOURS</span>
                             <h3 class="moodboard-card-title">Introducing North Automations: Intelligent workflow
                                 orchestration</h3>
-                            <p class="moodboard-card-desc lin">
+                            <p class="moodboard-card-desc line-clamp-2">
                                 Free your team from repetitive tasks with smart multi-platform posting, self-operating
                                 waitlist queues, and auto-routed review requests.
                             </p>
@@ -3179,7 +3224,7 @@
                             <span class="moodboard-card-meta">GROWTH ENGINE • 300% REACH</span>
                             <h3 class="moodboard-card-title">AI Content & Multi-Channel Sync: Triple your customer reach
                             </h3>
-                            <p class="moodboard-card-desc">
+                            <p class="moodboard-card-desc line-clamp-2">
                                 Consistent AI-optimized scheduling and smart caption assist boost follower engagement,
                                 visitor return rates, and digital foot traffic.
                             </p>
@@ -3230,7 +3275,7 @@
                             <span class="moodboard-card-meta">ALL-IN-ONE • ZERO APP SWITCHING</span>
                             <h3 class="moodboard-card-title">All-in-One Operations: One single platform for your
                                 business</h3>
-                            <p class="moodboard-card-desc">
+                            <p class="moodboard-card-desc line-clamp-2">
                                 Eliminate disjointed subscriptions. Manage social feeds, live waitlists, web check-ins,
                                 and 5-star reputation in one single unified cockpit.
                             </p>
@@ -3254,8 +3299,8 @@
         <section class="py-24 px-6 md:px-10 lg:px-12 bg-[#fcfcfc]" id="faq" aria-labelledby="faq-title">
             <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
 
-                <!-- Left Column: Section Title, Badge & Support Visual -->
-                <div class="lg:col-span-4">
+                <!-- Left Column: Section Title, Badge & Support Visual (Sticky on Desktop) -->
+                <div class="lg:col-span-4 lg:sticky lg:top-28 self-start">
                     <div class="space-y-6">
                         <div>
                             <!-- Badge matching previous section -->
@@ -3598,18 +3643,18 @@
                 </defs>
             </svg>
             <!-- Vertical hairline column pinstripes in bottom 40% -->
-            <div class="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(90deg,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:120px_100%] [mask-image:linear-gradient(to_top,black,transparent)]"></div>
+            <div class="absolute inset-0 opacity-[0.06] [background-image:linear-gradient(90deg,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:40px_100%] [mask-image:linear-gradient(to_top,black,transparent)]"></div>
             <!-- Subtle bottom glow wash -->
             <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#126bdc]/10 to-transparent"></div>
         </div>
 
         <!-- Subtle Hairline Geometric Grid Texture -->
-        <div class="absolute inset-0 opacity-[0.035] pointer-events-none [background-image:linear-gradient(rgba(255,255,255,.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.2)_1px,transparent_1px)] [background-size:60px_60px]"></div>
+        <div class="absolute inset-0 opacity-[0.035] pointer-events-none [background-image:linear-gradient(rgba(255,255,255,.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.2)_1px,transparent_1px)] [background-size:24px_24px]"></div>
 
         <div class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 pt-16 sm:pt-20 pb-12">
 
             <!-- Top Footer Grid: Brand + Nav Columns -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 pb-14 border-b border-white/[0.08]">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 pb-14">
                 <!-- Brand Statement Column (col-span-4) -->
                 <div class="lg:col-span-4 flex flex-col">
                     <!-- Brand Logo (Inverted white version, larger size, transparent) -->
@@ -3768,23 +3813,23 @@
                 </div>
             </div>
 
-            <!-- Newsletter Subscribe Band — single horizontal row, centered -->
+            <!-- Newsletter Subscribe Band -->
             <div class="py-10 border-b border-white/[0.08]">
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mx-auto max-w-3xl">
-                    <!-- Left: title + badge + description -->
-                    <div class="flex-shrink-0 text-center sm:text-left">
-                        <div class="flex items-center justify-center sm:justify-start gap-2.5 mb-1">
+                <div class="flex flex-col items-center justify-center text-center mx-auto max-w-xl">
+                    <!-- Heading and description -->
+                    <div class="mb-5">
+                        <div class="flex items-center justify-center gap-2.5 mb-2">
                             <span class="text-xs font-bold tracking-widest text-white uppercase">Subscribe to Product Releases</span>
                         </div>
-                        <p class="text-xs text-zinc-400">Be the first to receive AI automation playbooks &amp; workflow updates.</p>
+                        <p class="text-xs sm:text-sm text-zinc-400">Be the first to receive AI automation playbooks &amp; workflow updates.</p>
                     </div>
-                    <!-- Right: email input + Join button on the same line -->
-                    <form class="relative flex items-center w-full sm:w-auto sm:min-w-[340px] flex-shrink-0 group/form" onsubmit="event.preventDefault(); const btn = this.querySelector('button span'); btn.textContent = 'Subscribed ✓'; this.querySelector('input').value = ''; setTimeout(() => btn.textContent = 'Join', 3000);">
+                    <!-- Form: Field with button below -->
+                    <form class="flex flex-col sm:flex-row items-center gap-3 w-full max-w-md" onsubmit="event.preventDefault(); const btn = this.querySelector('button span'); btn.textContent = 'Subscribed ✓'; this.querySelector('input').value = ''; setTimeout(() => btn.textContent = 'Subscribe', 3000);">
                         <input type="email" placeholder="Enter your work email" required
-                            class="w-full h-12 pl-5 pr-28 rounded-full bg-white/[0.06] border border-white/[0.12] text-sm text-white placeholder-zinc-400 focus:outline-none focus:border-[#126bdc] focus:ring-2 focus:ring-[#126bdc]/30 transition-all">
+                            class="w-full h-12 px-5 rounded-full bg-white/[0.06] border border-white/[0.12] text-sm text-white placeholder-zinc-400 focus:outline-none focus:border-[#126bdc] focus:ring-2 focus:ring-[#126bdc]/30 transition-all">
                         <button type="submit"
-                            class="nav-cta-luxury absolute right-1 top-1 bottom-1 !py-0 !px-4 text-xs font-bold shadow-md cursor-pointer flex items-center gap-1.5 group/btn" aria-label="Subscribe">
-                            <span>Join</span>
+                            class="nav-cta-luxury w-full sm:w-auto h-12 !py-0 px-6 text-xs font-bold shadow-md cursor-pointer flex items-center justify-center gap-2 flex-shrink-0 group/btn" aria-label="Subscribe to Product Releases">
+                            <span>Subscribe</span>
                             <span class="nav-cta-icon-pill !w-5 !h-5">
                                 <svg class="w-3 h-3 text-white transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
