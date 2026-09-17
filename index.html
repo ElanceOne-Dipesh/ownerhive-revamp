@@ -20,6 +20,9 @@
                     fontFamily: {
                         sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
                     },
+                    maxWidth: {
+                        '8xl': '1400px',
+                    },
                     colors: {
                         brand: {
                             ink: '#09090b',
@@ -1297,22 +1300,23 @@
            Luxury Violet (#8b5cf6), SaaS Slate (#71717a), Fine Stroke (#e4e4e7), Clean Page (#fcfcfc)
            ========================================================================== */
         .faq-item {
-            background: #ffffff;
-            border: 1px solid #e4e4e7;
-            border-radius: 18px;
+            background: transparent;
+            border: none;
+            border-radius: 0;
             overflow: hidden;
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .faq-item + .faq-item {
+            border-top: 1px solid #e4e4e7;
         }
 
         .faq-item:hover {
-            border-color: rgba(18, 107, 220, 0.35);
-            box-shadow: 0 6px 20px -4px rgba(9, 9, 11, 0.05);
+            border-color: #e4e4e7;
         }
 
         .faq-item.is-open {
-            background: #ffffff;
-            border-color: #126bdc;
-            box-shadow: 0 10px 30px -10px rgba(18, 107, 220, 0.1);
+            background: transparent;
+            box-shadow: none;
         }
 
         .faq-trigger {
@@ -1321,7 +1325,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 1.25rem;
-            padding: 1.35rem 1.65rem;
+            padding: 1.2rem 0;
             text-align: left;
             background: none;
             border: none;
@@ -1381,14 +1385,33 @@
 
         /* Answer block */
         .faq-answer-block {
-            padding: 0 1.65rem 1.5rem;
+            display: grid;
+            grid-template-rows: 0fr;
+            opacity: 0;
+            transition:
+                grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.3s ease;
+        }
+
+        .faq-item.is-open .faq-answer-block {
+            grid-template-rows: 1fr;
+            opacity: 1;
+        }
+
+        .faq-answer-inner {
+            overflow: hidden;
+            min-height: 0;
+            padding: 0 0 1.35rem;
             font-size: 0.9375rem;
             line-height: 1.65;
             color: #71717a;
         }
 
-        .faq-answer-block[hidden] {
-            display: none !important;
+        @media (prefers-reduced-motion: reduce) {
+            .faq-answer-block,
+            .faq-toggle-btn svg {
+                transition: none;
+            }
         }
 
         /* Is this helpful pill matching FAQ 1.png */
@@ -1476,7 +1499,7 @@
                 document.getElementById('site-header').classList.add('is-scrolled');
             }
         </script>
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="max-w-8xl mx-auto px-6 sm:px-10 lg:px-16 h-20 flex items-center justify-between">
             <!-- Squint-Style Nav Island (Logo + Navigation: turns white on dropdown hover) -->
             <div id="nav-island"
                 class="nav-island flex items-center justify-between flex-1 mr-4 lg:mr-6 h-14 sm:h-16 px-3.5 sm:px-5 rounded-2xl">
@@ -2047,7 +2070,7 @@
     <main id="top">
         <!-- Hero Section -->
         <section
-            class="relative overflow-hidden pt-36 sm:pt-40 lg:pt-44 pb-20 px-4 sm:px-6 lg:px-12 text-white text-center bg-gradient-to-br from-[#09090b] via-[#0f58b6] to-[#8b5cf6]">
+            class="relative overflow-hidden pt-36 sm:pt-40 lg:pt-44 pb-20 px-6 sm:px-10 lg:px-16 text-white text-center bg-gradient-to-br from-[#09090b] via-[#0f58b6] to-[#8b5cf6]">
             <!-- Ambient Glow Spots (Original) -->
             <div
                 class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#cd5fff]/30 rounded-full blur-[120px] pointer-events-none">
@@ -2061,10 +2084,10 @@
             </div>
             <!-- Horizontal Hairline Accent (aligned exactly with the 80px bottom line of navbar) -->
             <div
-                class="absolute left-1/2 top-20 h-px w-[min(92vw,1400px)] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/35 to-transparent pointer-events-none">
+                class="absolute left-1/2 top-20 h-px w-full max-w-8xl -translate-x-1/2 bg-gradient-to-r from-transparent via-white/35 to-transparent pointer-events-none">
             </div>
 
-            <div class="relative z-10 max-w-[1400px] mx-auto">
+            <div class="relative z-10 max-w-8xl mx-auto">
                 <!-- Hero Header -->
                 <div class="max-w-4xl mx-auto mb-12">
                     <div
@@ -2327,14 +2350,14 @@
         </section>
 
         <!-- Feature / Tools Section -->
-        <section class="relative overflow-hidden py-20 sm:py-24 px-4 sm:px-6 lg:px-12 scroll-mt-24 bg-[#fcfcfc]"
+        <section class="relative overflow-hidden py-20 sm:py-24 px-6 sm:px-10 lg:px-16 scroll-mt-24 bg-[#fcfcfc]"
             id="portal" aria-labelledby="tools-title">
             <!-- Soft brand ambient wash (Luxury Blue / Violet) -->
             <div
                 class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top,rgba(18,107,220,0.06),transparent_55%)]">
             </div>
 
-            <div class="relative z-10 max-w-[1400px] mx-auto">
+            <div class="relative z-10 max-w-8xl mx-auto">
                 <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-12 lg:mb-14">
                     <div class="max-w-2xl">
                         <p class="text-sm font-semibold tracking-[0.02em] text-[#126bdc] mb-3">
@@ -2753,7 +2776,7 @@
 
         <!-- Features Section (Hero-Matching Gradient & Horizontal Scrolling Carousel) -->
         <section
-            class="relative py-12 sm:py-16 px-4 sm:px-6 lg:px-12 text-white overflow-hidden bg-gradient-to-br from-[#09090b] via-[#0f58b6] to-[#8b5cf6] border-t border-white/15"
+            class="relative py-12 sm:py-16 px-6 sm:px-10 lg:px-16 text-white overflow-hidden bg-gradient-to-br from-[#09090b] via-[#0f58b6] to-[#8b5cf6] border-t border-white/15"
             id="features" aria-labelledby="features-title">
             <!-- Ambient Glow Spots (Hero-matching lighting) -->
             <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#cd5fff]/30 rounded-full blur-[120px] pointer-events-none" aria-hidden="true"></div>
@@ -2761,7 +2784,7 @@
             <!-- Line Grid Design Overlay -->
             <div class="absolute inset-0 opacity-20 pointer-events-none [background-image:linear-gradient(rgba(255,255,255,.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.18)_1px,transparent_1px)] [background-size:72px_72px] [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]" aria-hidden="true"></div>
 
-            <div class="relative z-10 max-w-[1440px] mx-auto">
+            <div class="relative z-10 max-w-8xl mx-auto">
                 <!-- Section Header Row: Title on Left, Carousel Controls on Right -->
                 <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8 sm:mb-10">
                     <div class="max-w-2xl">
@@ -3020,9 +3043,9 @@
 
 
         <!-- Why Choose OwnerHive / Benefits (Cohere Moodboard Style Cards) -->
-        <section class="py-24 px-6 md:px-10 lg:px-12 bg-[#fcfcfc] border-t border-[#e4e4e7]" id="benefits"
+        <section class="py-24 px-6 sm:px-10 lg:px-16 bg-[#fcfcfc] border-t border-[#e4e4e7]" id="benefits"
             aria-labelledby="benefits-title">
-            <div class="max-w-[1400px] mx-auto">
+            <div class="max-w-8xl mx-auto">
                 <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
                     <div class="max-w-2xl">
                         <p class="text-sm font-semibold tracking-[0.02em] text-[#126bdc] mb-3">
@@ -3218,9 +3241,9 @@
         <!-- TESTIMONIALS SECTION — Light split masonry (Style Guide)     -->
         <!-- ============================================================ -->
         <section id="testimonials" aria-labelledby="testimonials-heading"
-            class="relative overflow-hidden pt-14 pb-20 sm:pt-20 sm:pb-28 px-4 sm:px-6 lg:px-12 bg-[#fcfcfc]">
+            class="relative overflow-hidden pt-14 pb-20 sm:pt-20 sm:pb-28 px-6 sm:px-10 lg:px-16 bg-[#fcfcfc]">
 
-            <div class="relative z-10 max-w-[1400px] mx-auto">
+            <div class="relative z-10 max-w-8xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 xl:gap-16 items-center">
 
                     <!-- Left: sticky copy + CTA -->
@@ -3507,7 +3530,7 @@
         <!-- /END TESTIMONIALS SECTION -->
 
         <!-- AI-powered closing call to action -->
-        <section class="relative overflow-hidden py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 bg-[#126bdc]" id="contact" aria-labelledby="cta-title">
+        <section class="relative overflow-hidden py-16 sm:py-20 lg:py-24 px-6 sm:px-10 lg:px-16 bg-[#126bdc]" id="contact" aria-labelledby="cta-title">
             <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 pointer-events-none" style="background-image: url('assets/CTA-BG3.jpg');" aria-hidden="true"></div>
 
             <!-- Precision Angled Cuts & Hairline Accent Laser Lines along the facet edge -->
@@ -3543,13 +3566,12 @@
                 <div class="absolute inset-0 cta-laser-beam opacity-40 bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none"></div>
             </div>
 
-            <div class="relative z-10 max-w-[1400px] mx-auto">
+            <div class="relative z-10 max-w-8xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
                         <!-- Left Side (50%): Content pinned to top, buttons & badges pinned to bottom -->
                         <div class="lg:col-span-6 xl:col-span-6 text-left flex flex-col justify-between">
                             <!-- Top content block -->
                             <div>
-                                <p class="text-sm font-semibold tracking-[0.02em] text-white/85 mb-3">Ready when you are</p>
                                 <h2 id="cta-title" class="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-white leading-[1.16] mb-3 text-balance">
                                     Ready to transform your daily operations?
                                 </h2>
@@ -3610,40 +3632,16 @@
 
         <!-- FAQ Section — Moodboard Accordion Style -->
         <section class="py-24 px-4 sm:px-6 lg:px-12 bg-[#fcfcfc]" id="faq" aria-labelledby="faq-title">
-            <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-
-                <!-- Left Column: Section Title, Badge & Support Visual (Sticky on Desktop) -->
-                <div class="lg:col-span-4 lg:sticky lg:top-28 self-start">
-                    <div class="space-y-6">
-                        <div>
-                            <!-- Badge matching previous section -->
-                            <p class="text-sm font-semibold tracking-[0.02em] text-[#126bdc] mb-3">
-                                Frequently asked questions
-                            </p>
-                            <!-- Section Title -->
-                            <h2 id="faq-title"
-                                class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.15] text-[#09090b] text-balance">
-                                About OwnerHive
-                            </h2>
-                            <p class="text-base leading-relaxed text-[#71717a] mt-4">
-                                Everything you need to know about the platform, automated operations, and how OwnerHive
-                                helps local businesses grow.
-                            </p>
-                        </div>
-
-                        <!-- Image on the bottom of About OwnerHive -->
-                        <div class="rounded-2xl overflow-hidden border border-[#e4e4e7] bg-white p-2.5 shadow-sm">
-                            <img src="assets/ownerhive-faq-support.jpg" alt="About OwnerHive Operations and Support"
-                                class="w-full h-auto rounded-xl object-cover" loading="lazy">
-                        </div>
-                    </div>
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-10 sm:mb-12">
+                    <h2 id="faq-title"
+                        class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.15] text-[#09090b] text-balance">
+                        Frequently asked questions
+                    </h2>
                 </div>
 
-                <!-- Right Column: FAQs -->
-                <div class="lg:col-span-8">
-
                     <!-- FAQ List -->
-                    <div class="flex flex-col gap-3.5" id="faq-list" role="list">
+                    <div class="flex flex-col" id="faq-list" role="list">
 
                         <!-- FAQ Item 1 -->
                         <div class="faq-item is-open" role="listitem">
@@ -3658,6 +3656,7 @@
                                 </span>
                             </button>
                             <div class="faq-answer-block" id="faq-answer-1" role="region" aria-labelledby="faq-btn-1">
+                                <div class="faq-answer-inner">
                                 <p>OwnerHive is an all-in-one business operations platform built for local business
                                     owners. We combine social media management, virtual waitlist queues, web-based
                                     customer check-ins, and automated review collection into one connected portal — so
@@ -3670,6 +3669,7 @@
                                         title="Not helpful">👎</button>
                                 </div>
                             </div>
+                        </div>
                         </div>
 
                         <!-- FAQ Item 2 -->
@@ -3684,8 +3684,8 @@
                                     </svg>
                                 </span>
                             </button>
-                            <div class="faq-answer-block" id="faq-answer-2" role="region" aria-labelledby="faq-btn-2"
-                                hidden>
+                            <div class="faq-answer-block" id="faq-answer-2" role="region" aria-labelledby="faq-btn-2">
+                                <div class="faq-answer-inner">
                                 <p>OwnerHive is built for local business owners — restaurants, salons, spas, fitness
                                     studios, retail shops, and service providers — who want to look professional online,
                                     reduce customer friction, and grow their reputation without hiring a full marketing
@@ -3698,6 +3698,7 @@
                                         title="Not helpful">👎</button>
                                 </div>
                             </div>
+                        </div>
                         </div>
 
                         <!-- FAQ Item 3 -->
@@ -3712,8 +3713,8 @@
                                     </svg>
                                 </span>
                             </button>
-                            <div class="faq-answer-block" id="faq-answer-3" role="region" aria-labelledby="faq-btn-3"
-                                hidden>
+                            <div class="faq-answer-block" id="faq-answer-3" role="region" aria-labelledby="faq-btn-3">
+                                <div class="faq-answer-inner">
                                 <p>The Social Manager lets you connect all your social accounts — Instagram, Facebook,
                                     Google, and more — and manage everything from one dashboard. You can plan posts in a
                                     calendar view, publish with one click, and track engagement without switching apps.
@@ -3726,6 +3727,7 @@
                                         title="Not helpful">👎</button>
                                 </div>
                             </div>
+                        </div>
                         </div>
 
                         <!-- FAQ Item 4 -->
@@ -3741,8 +3743,8 @@
                                     </svg>
                                 </span>
                             </button>
-                            <div class="faq-answer-block" id="faq-answer-4" role="region" aria-labelledby="faq-btn-4"
-                                hidden>
+                            <div class="faq-answer-block" id="faq-answer-4" role="region" aria-labelledby="faq-btn-4">
+                                <div class="faq-answer-inner">
                                 <p>No app required — ever. Customers simply text a keyword to join the virtual line,
                                     receive live wait-time updates via SMS, and show up when it's their turn. The whole
                                     system is browser and SMS-based, so there's zero friction on the customer side.</p>
@@ -3754,6 +3756,7 @@
                                         title="Not helpful">👎</button>
                                 </div>
                             </div>
+                        </div>
                         </div>
 
                         <!-- FAQ Item 5 -->
@@ -3768,8 +3771,8 @@
                                     </svg>
                                 </span>
                             </button>
-                            <div class="faq-answer-block" id="faq-answer-5" role="region" aria-labelledby="faq-btn-5"
-                                hidden>
+                            <div class="faq-answer-block" id="faq-answer-5" role="region" aria-labelledby="faq-btn-5">
+                                <div class="faq-answer-inner">
                                 <p>Most businesses are fully live within 30 minutes. Your Web Check-In link is active in
                                     under 5 minutes, the Queue Manager is ready to accept customers the same day, and
                                     your social accounts connect in seconds. No engineering or technical setup is
@@ -3782,6 +3785,7 @@
                                         title="Not helpful">👎</button>
                                 </div>
                             </div>
+                        </div>
                         </div>
 
                         <!-- FAQ Item 6 -->
@@ -3796,8 +3800,8 @@
                                     </svg>
                                 </span>
                             </button>
-                            <div class="faq-answer-block" id="faq-answer-6" role="region" aria-labelledby="faq-btn-6"
-                                hidden>
+                            <div class="faq-answer-block" id="faq-answer-6" role="region" aria-labelledby="faq-btn-6">
+                                <div class="faq-answer-inner">
                                 <p>Review Booster automatically sends a review request via SMS or email after each
                                     customer visit. Happy customers are guided to Google or other review platforms with
                                     one tap. Unhappy customers are routed to a private feedback channel instead,
@@ -3811,22 +3815,9 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
 
                     </div>
-
-                    <!-- Contact strip -->
-                    <div class="faq-contact-strip">
-                        <p>Still have questions? Our team is ready to help you get set up and running.</p>
-                        <a href="https://ownerhive.com/contact/" aria-label="Contact OwnerHive support">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                            </svg>
-                            <span>Talk to us</span>
-                        </a>
-                    </div>
-
-                </div>
             </div>
         </section>
 
@@ -3882,7 +3873,7 @@
         <!-- Subtle Hairline Geometric Grid Texture -->
         <div class="absolute inset-0 opacity-[0.035] pointer-events-none [background-image:linear-gradient(rgba(255,255,255,.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.2)_1px,transparent_1px)] [background-size:24px_24px]"></div>
 
-        <div class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 pt-16 sm:pt-20 pb-12">
+        <div class="relative z-10 max-w-8xl mx-auto px-6 sm:px-10 lg:px-16 pt-16 sm:pt-20 pb-12">
 
             <!-- Top Footer Grid: Brand + Nav Columns -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 pb-14">
@@ -4463,30 +4454,38 @@
 
             const faqItems = Array.from(faqList.querySelectorAll('.faq-item'));
 
+            const syncAnswers = () => {
+                faqItems.forEach((el) => {
+                    const open = el.classList.contains('is-open');
+                    const t = el.querySelector('.faq-trigger');
+                    const a = el.querySelector('.faq-answer-block');
+                    if (t) t.setAttribute('aria-expanded', open ? 'true' : 'false');
+                    if (a) a.setAttribute('aria-hidden', open ? 'false' : 'true');
+                });
+            };
+
+            syncAnswers();
+
             faqItems.forEach((item) => {
                 const trigger = item.querySelector('.faq-trigger');
-                const answerBlock = item.querySelector('.faq-answer-block');
-                const toggleBtn = item.querySelector('.faq-toggle-btn');
-
                 if (!trigger) return;
 
                 trigger.addEventListener('click', () => {
                     const isOpen = item.classList.contains('is-open');
 
-                    // Close all items first
                     faqItems.forEach((el) => {
                         el.classList.remove('is-open');
                         const t = el.querySelector('.faq-trigger');
                         const a = el.querySelector('.faq-answer-block');
                         if (t) t.setAttribute('aria-expanded', 'false');
-                        if (a) a.hidden = true;
+                        if (a) a.setAttribute('aria-hidden', 'true');
                     });
 
-                    // If it was closed, open this one
                     if (!isOpen) {
                         item.classList.add('is-open');
                         trigger.setAttribute('aria-expanded', 'true');
-                        if (answerBlock) answerBlock.hidden = false;
+                        const answerBlock = item.querySelector('.faq-answer-block');
+                        if (answerBlock) answerBlock.setAttribute('aria-hidden', 'false');
                     }
                 });
 
