@@ -151,84 +151,11 @@
         /* ==========================================================================
            Upgraded Luxury CTA Section Styles & Animations
            ========================================================================== */
-        @keyframes ctaLogoDrift1 {
-            0% {
-                transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
-            }
-            20% {
-                transform: translate3d(45px, -30px, 0) rotate(8deg) scale(1.06);
-            }
-            45% {
-                transform: translate3d(-30px, -55px, 0) rotate(-6deg) scale(0.96);
-            }
-            70% {
-                transform: translate3d(-50px, 20px, 0) rotate(10deg) scale(1.04);
-            }
-            85% {
-                transform: translate3d(20px, 35px, 0) rotate(-4deg) scale(1.02);
-            }
-            100% {
-                transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
-            }
-        }
-
-        @keyframes ctaLogoDrift2 {
-            0% {
-                transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
-            }
-            25% {
-                transform: translate3d(-50px, 35px, 0) rotate(-10deg) scale(1.08);
-            }
-            50% {
-                transform: translate3d(35px, -25px, 0) rotate(7deg) scale(0.94);
-            }
-            75% {
-                transform: translate3d(60px, 40px, 0) rotate(-5deg) scale(1.05);
-            }
-            100% {
-                transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
-            }
-        }
-
-        @keyframes ctaLogoDrift3 {
-            0% {
-                transform: translate3d(0, 0, 0) rotate(0deg) scale(0.9);
-                opacity: 0.65;
-            }
-            33% {
-                transform: translate3d(30px, -40px, 0) rotate(12deg) scale(1.02);
-                opacity: 0.85;
-            }
-            66% {
-                transform: translate3d(-25px, 30px, 0) rotate(-8deg) scale(0.95);
-                opacity: 0.7;
-            }
-            100% {
-                transform: translate3d(0, 0, 0) rotate(0deg) scale(0.9);
-                opacity: 0.65;
-            }
-        }
-
         @keyframes ctaLaserSweep {
             0% { transform: translateX(-100%) skewX(-30deg); opacity: 0; }
             30% { opacity: 0.8; }
             70% { opacity: 0.8; }
             100% { transform: translateX(250%) skewX(-30deg); opacity: 0; }
-        }
-
-        .cta-floating-logo-1 {
-            animation: ctaLogoDrift1 16s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-            will-change: transform;
-        }
-
-        .cta-floating-logo-2 {
-            animation: ctaLogoDrift2 20s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-            will-change: transform;
-        }
-
-        .cta-floating-logo-3 {
-            animation: ctaLogoDrift3 14s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-            will-change: transform;
         }
 
         .cta-laser-beam {
@@ -3287,8 +3214,402 @@
             </div>
         </section>
 
+        <!-- ============================================================ -->
+        <!-- TESTIMONIALS SECTION — Light split masonry (Style Guide)     -->
+        <!-- ============================================================ -->
+        <section id="testimonials" aria-labelledby="testimonials-heading"
+            class="relative overflow-hidden pt-14 pb-20 sm:pt-20 sm:pb-28 px-4 sm:px-6 lg:px-12 bg-[#fcfcfc]">
+
+            <div class="relative z-10 max-w-[1400px] mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 xl:gap-16 items-center">
+
+                    <!-- Left: sticky copy + CTA -->
+                    <div class="lg:col-span-4 xl:col-span-4 lg:sticky lg:top-28 self-start">
+                        <p class="text-sm font-semibold tracking-[0.02em] text-[#126bdc] mb-3">
+                            Testimonials
+                        </p>
+                        <h2 id="testimonials-heading"
+                            class="text-4xl sm:text-5xl lg:text-[2.75rem] xl:text-[3.15rem] font-semibold leading-[1.12] tracking-tight text-[#09090b] text-balance mb-5">
+                            What Our Customers Say
+                        </h2>
+                        <p class="text-[#71717a] text-base leading-7 tracking-[0.01em] mb-6 max-w-sm">
+                            Loved by business owners who manage queues, reviews, and campaigns from one unified dashboard.
+                        </p>
+                        <a href="https://ownerhive.com/contact/" class="nav-cta-luxury group inline-flex" aria-label="Book a demo">
+                            <span>Book a demo</span>
+                            <span class="nav-cta-icon-pill">
+                                <svg class="w-3.5 h-3.5 text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+
+                    <!-- Right: fading masonry columns -->
+                    <div class="lg:col-span-8 xl:col-span-8 relative">
+                        <div class="pointer-events-none absolute top-0 inset-x-0 h-20 sm:h-28 bg-gradient-to-b from-[#fcfcfc] via-[#fcfcfc]/85 to-transparent z-10" aria-hidden="true"></div>
+                        <div class="pointer-events-none absolute bottom-0 inset-x-0 h-20 sm:h-28 bg-gradient-to-t from-[#fcfcfc] via-[#fcfcfc]/85 to-transparent z-10" aria-hidden="true"></div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 overflow-hidden max-h-[560px] sm:max-h-[620px]">
+
+                            <!-- Col 1 — up -->
+                            <div class="flex flex-col gap-4 testimonials-col-up" style="animation: testimonialScrollUp 30s linear infinite;">
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"OwnerHive completely changed how we manage our daily walk-ins. The queue system is intuitive and our customers actually love the SMS updates."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Marcus Kim</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"The AI-powered review booster alone paid for the entire subscription within the first month. We went from 42 Google reviews to 180+ in just 8 weeks."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Priya Rao</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Setting up took under 30 minutes. The dashboard is incredibly clean and the AI scheduling suggestions have saved us hours every single week."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">James Lee</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="4 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]/30" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"We tried three other platforms before OwnerHive. Nothing came close to this level of polish. The campaign scheduler alone saves us 6+ hours a week."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Aisha Thompson</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"OwnerHive completely changed how we manage our daily walk-ins. The queue system is intuitive and our customers actually love the SMS updates."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Marcus Kim</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"The AI-powered review booster alone paid for the entire subscription within the first month. We went from 42 Google reviews to 180+ in just 8 weeks."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Priya Rao</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Setting up took under 30 minutes. The dashboard is incredibly clean and the AI scheduling suggestions have saved us hours every single week."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">James Lee</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="4 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]/30" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"We tried three other platforms before OwnerHive. Nothing came close to this level of polish. The campaign scheduler alone saves us 6+ hours a week."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Aisha Thompson</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            </div>
+
+                            <!-- Col 2 — down -->
+                            <div class="flex flex-col gap-4 testimonials-col-down hidden sm:flex" style="animation: testimonialScrollDown 34s linear infinite; margin-top: -120px;">
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"The multi-platform posting feature is outstanding. One post, published across Google, Instagram, and Facebook simultaneously. Our engagement tripled."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Sofia Nakamura</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Real-time queue visibility for our customers is brilliant. They check their position on their phone and only walk in when it's their turn."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">David Mensah</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Customer satisfaction went up 40% in two months. The private feedback channel catches unhappy customers before they ever post a bad public review."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Laura Chen</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"I manage 3 locations and OwnerHive is the only tool that gives me a unified view across all of them in real time. Worth every penny."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Rafael Barros</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"The multi-platform posting feature is outstanding. One post, published across Google, Instagram, and Facebook simultaneously. Our engagement tripled."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Sofia Nakamura</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Real-time queue visibility for our customers is brilliant. They check their position on their phone and only walk in when it's their turn."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">David Mensah</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Customer satisfaction went up 40% in two months. The private feedback channel catches unhappy customers before they ever post a bad public review."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Laura Chen</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"I manage 3 locations and OwnerHive is the only tool that gives me a unified view across all of them in real time. Worth every penny."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Rafael Barros</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            </div>
+
+                            <!-- Col 3 — up -->
+                            <div class="flex flex-col gap-4 testimonials-col-up-2 hidden lg:flex" style="animation: testimonialScrollUp 38s linear infinite; margin-top: -60px;">
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"The AI content generator writes better captions than I ever could. It matches our brand voice perfectly and saves me hours crafting posts every week."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Nina Williams</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Our no-show rate dropped by 60% after enabling the web check-in reminders. Customers are actually showing up prepared and on time now."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Olivia Anderson</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="4 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]/30" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Best investment I made for my photography studio. The analytics dashboard tells me exactly which post types drive the most bookings."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Tom Keller</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Switched from a custom-built system that cost us $12k. OwnerHive does more, costs less, and our team adopted it in a single afternoon."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Yuki Park</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"The AI content generator writes better captions than I ever could. It matches our brand voice perfectly and saves me hours crafting posts every week."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Nina Williams</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Our no-show rate dropped by 60% after enabling the web check-in reminders. Customers are actually showing up prepared and on time now."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Olivia Anderson</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="4 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]/30" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Best investment I made for my photography studio. The analytics dashboard tells me exactly which post types drive the most bookings."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Tom Keller</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            <article class="testimonial-card rounded-2xl bg-[#eef5ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#126bdc]/45 hover:shadow-[0_10px_10px_rgba(18,107,220,0.12)]">
+                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Switched from a custom-built system that cost us $12k. OwnerHive does more, costs less, and our team adopted it in a single afternoon."</p>
+                                <div class="font-semibold text-[#09090b] text-sm">Yuki Park</div>
+                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+                            </article>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                #testimonials .testimonial-card {
+                    position: relative;
+                    isolation: isolate;
+                    overflow: hidden;
+                    padding: 1.25rem;
+                    gap: 0;
+                    background:
+                        radial-gradient(circle at 88% 10%, rgba(18, 107, 220, 0.2), transparent 34%),
+                        linear-gradient(145deg, #f7faff 0%, #e8f1fc 100%);
+                    border: 1px solid rgba(18, 107, 220, 0.22);
+                    box-shadow:
+                        0 14px 32px -24px rgba(18, 107, 220, 0.42),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+                    transform: translateZ(0);
+                }
+
+                #testimonials .testimonial-card > p {
+                    margin-bottom: 0.9rem;
+                }
+
+                #testimonials .testimonial-card > p + div {
+                    margin-bottom: 0.4rem;
+                }
+
+                #testimonials .testimonials-col-up .testimonial-card:nth-child(2n) {
+                    background:
+                        radial-gradient(circle at 10% 0%, rgba(18, 107, 220, 0.17), transparent 36%),
+                        linear-gradient(145deg, #f8fbff 0%, #e6f0fb 100%);
+                }
+
+                #testimonials .testimonials-col-down .testimonial-card:nth-child(2n + 1) {
+                    background:
+                        radial-gradient(circle at 90% 8%, rgba(18, 107, 220, 0.18), transparent 34%),
+                        linear-gradient(145deg, #f6faff 0%, #e5effb 55%, #eef5ff 100%);
+                }
+
+                #testimonials .testimonials-col-up-2 .testimonial-card:nth-child(2n) {
+                    background:
+                        radial-gradient(circle at 12% 8%, rgba(18, 107, 220, 0.2), transparent 35%),
+                        linear-gradient(145deg, #f8fbff 0%, #e5effb 100%);
+                }
+
+                #testimonials .testimonial-card::before {
+                    content: '';
+                    position: absolute;
+                    z-index: -1;
+                    top: -2.75rem;
+                    right: -2.75rem;
+                    width: 7rem;
+                    height: 7rem;
+                    border-radius: 9999px;
+                    border: 1px solid rgba(18, 107, 220, 0.18);
+                    box-shadow:
+                        0 0 0 12px rgba(18, 107, 220, 0.035),
+                        0 0 0 28px rgba(18, 107, 220, 0.025);
+                }
+
+                #testimonials .testimonial-card::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 18%;
+                    right: 18%;
+                    height: 1px;
+                    background: linear-gradient(90deg, transparent, rgba(18, 107, 220, 0.45), #126bdc, rgba(18, 107, 220, 0.45), transparent);
+                    opacity: 0.55;
+                }
+
+                #testimonials .testimonial-card:hover {
+                    box-shadow:
+                        0 20px 38px -24px rgba(18, 107, 220, 0.55),
+                        0 12px 24px -22px rgba(18, 107, 220, 0.65),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+                    transform: translateY(-3px);
+                }
+
+                #testimonials .testimonial-card > div[aria-label] {
+                    padding: 0;
+                    border-radius: 0;
+                    background: transparent;
+                    border: none;
+                    box-shadow: none;
+                }
+
+                #testimonials .testimonial-card > div[aria-label] svg {
+                    color: #f5b82e;
+                }
+
+                #testimonials .testimonial-card > div[aria-label^="4"] svg:last-child {
+                    color: #d4d4d8;
+                }
+
+                @keyframes testimonialScrollUp {
+                    0% { transform: translateY(0); }
+                    100% { transform: translateY(calc(-50% - 0.5rem)); }
+                }
+                @keyframes testimonialScrollDown {
+                    0% { transform: translateY(calc(-50% - 0.5rem)); }
+                    100% { transform: translateY(0); }
+                }
+                @media (prefers-reduced-motion: reduce) {
+                    #testimonials .testimonials-col-up,
+                    #testimonials .testimonials-col-down,
+                    #testimonials .testimonials-col-up-2 {
+                        animation: none !important;
+                        margin-top: 0 !important;
+                        transform: none !important;
+                    }
+                }
+            </style>
+        </section>
+        <!-- /END TESTIMONIALS SECTION -->
+
+        <!-- AI-powered closing call to action -->
+        <section class="relative overflow-hidden py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 bg-[#126bdc]" id="contact" aria-labelledby="cta-title">
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 pointer-events-none" style="background-image: url('assets/CTA-BG3.jpg');" aria-hidden="true"></div>
+
+            <!-- Precision Angled Cuts & Hairline Accent Laser Lines along the facet edge -->
+            <div class="absolute inset-y-0 right-0 w-full lg:w-1/2 pointer-events-none hidden overflow-hidden" aria-hidden="true">
+                <svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100" fill="none">
+                    <!-- Primary sharp cut line with gradient shimmer -->
+                    <line x1="14" y1="0" x2="0" y2="100" stroke="url(#cta-cut-grad-1)" stroke-width="0.85" />
+                    <!-- Parallel precision echo line -->
+                    <line x1="18" y1="0" x2="4" y2="100" stroke="url(#cta-cut-grad-2)" stroke-width="0.45" stroke-dasharray="2 2" />
+                    <!-- Third faint cut reflection -->
+                    <line x1="22" y1="0" x2="8" y2="100" stroke="rgba(255,255,255,0.12)" stroke-width="0.35" />
+                    
+                    <!-- Cross-directional geometric accent cut lines -->
+                    <line x1="30" y1="0" x2="90" y2="100" stroke="rgba(255,255,255,0.07)" stroke-width="0.5" />
+                    <line x1="60" y1="0" x2="100" y2="70" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" stroke-dasharray="4 6" />
+
+                    <defs>
+                        <linearGradient id="cta-cut-grad-1" x1="0" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8" />
+                            <stop offset="35%" stop-color="#80b4f8" stop-opacity="0.9" />
+                            <stop offset="70%" stop-color="#cd5fff" stop-opacity="0.7" />
+                            <stop offset="100%" stop-color="#ffffff" stop-opacity="0.3" />
+                        </linearGradient>
+                        <linearGradient id="cta-cut-grad-2" x1="0" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.2" />
+                            <stop offset="50%" stop-color="#ffffff" stop-opacity="0.6" />
+                            <stop offset="100%" stop-color="#126bdc" stop-opacity="0.1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+
+                <!-- Moving Laser Shimmer traveling down the cut facet -->
+                <div class="absolute inset-0 cta-laser-beam opacity-40 bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none"></div>
+            </div>
+
+            <div class="relative z-10 max-w-[1400px] mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
+                        <!-- Left Side (50%): Content pinned to top, buttons & badges pinned to bottom -->
+                        <div class="lg:col-span-6 xl:col-span-6 text-left flex flex-col justify-between">
+                            <!-- Top content block -->
+                            <div>
+                                <p class="text-sm font-semibold tracking-[0.02em] text-white/85 mb-3">Ready when you are</p>
+                                <h2 id="cta-title" class="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-white leading-[1.16] mb-3 text-balance">
+                                    Ready to transform your daily operations?
+                                </h2>
+                                <p class="text-sm sm:text-base text-white/75 leading-relaxed max-w-lg font-normal mb-8 lg:mb-0">
+                                    Join thousands of forward-thinking businesses managing queues, reviews, and multi-network campaigns from one unified AI dashboard.
+                                </p>
+                            </div>
+
+                            <!-- Bottom action block (buttons pinned to bottom) -->
+                            <div class="pt-6 lg:pt-8">
+                                <!-- Single primary CTA -->
+                                <div class="flex flex-col sm:flex-row items-stretch sm:items-center mb-4">
+                                    <a href="https://ownerhive.com/contact/" class="nav-cta-luxury nav-cta-hero group" id="cta-primary-btn" aria-label="Get Started Free">
+                                        <span>Get Started Free</span>
+                                        <span class="nav-cta-icon-pill">
+                                            <svg class="w-4 h-4 text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                                <polyline points="7 7 17 7 17 17"></polyline>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+
+                                <!-- System Status text line directly at the bottom of the buttons -->
+                                <div class="inline-flex flex-wrap items-center gap-2 text-xs text-white/70 font-medium">
+                                    <span class="inline-flex items-center gap-1.5">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                        <span>Systems Operational</span>
+                                    </span>
+                                    <span class="text-white/40">&bull;</span>
+                                    <span>SOC-2 Certified</span>
+                                    <span class="text-white/40">&bull;</span>
+                                    <span>99.9% SLA Guarantee</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Side (50% over Luxury Blue): Whitish 3D Clean Image Preview with glowing cuts -->
+                        <div class="lg:col-span-6 xl:col-span-6 relative flex items-center">
+                            <!-- Subtle glowing aura behind the whitish card -->
+                            <div class="absolute -inset-3 bg-gradient-to-tr from-white/30 via-cyan-300/20 to-purple-400/25 rounded-3xl blur-2xl pointer-events-none hidden lg:block"></div>
+                            
+                            <div class="relative w-full rounded-2xl overflow-hidden border border-white/50 bg-white shadow-[0_25px_50px_-12px_rgba(9,9,11,0.25)] aspect-[16/10] group">
+                                <img src="assets/ownerhive-cta-white.jpg"
+                                    alt="OwnerHive modern clean dashboard analytics"
+                                    class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                                    loading="lazy" width="1280" height="720">
+
+                                <!-- Glass corner reflection cut overlay -->
+                                <div class="absolute inset-0 pointer-events-none bg-gradient-to-tr from-transparent via-white/5 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
         <!-- FAQ Section — Moodboard Accordion Style -->
-        <section class="py-24 px-6 md:px-10 lg:px-12 bg-[#fcfcfc]" id="faq" aria-labelledby="faq-title">
+        <section class="py-24 px-4 sm:px-6 lg:px-12 bg-[#fcfcfc]" id="faq" aria-labelledby="faq-title">
             <div class="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
 
                 <!-- Left Column: Section Title, Badge & Support Visual (Sticky on Desktop) -->
@@ -3509,481 +3830,6 @@
             </div>
         </section>
 
-        <!-- ============================================================ -->
-        <!-- TESTIMONIALS SECTION — Light split masonry (Style Guide)     -->
-        <!-- ============================================================ -->
-        <section id="testimonials" aria-labelledby="testimonials-heading"
-            class="relative overflow-hidden pt-14 pb-20 sm:pt-20 sm:pb-28 bg-[#fcfcfc]">
-
-            <div class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 xl:gap-16 items-center">
-
-                    <!-- Left: sticky copy + CTA -->
-                    <div class="lg:col-span-4 xl:col-span-4 lg:sticky lg:top-28 self-start">
-                        <p class="text-sm font-semibold tracking-[0.02em] text-[#126bdc] mb-3">
-                            Testimonials
-                        </p>
-                        <h2 id="testimonials-heading"
-                            class="text-4xl sm:text-5xl lg:text-[2.75rem] xl:text-[3.15rem] font-semibold leading-[1.12] tracking-tight text-[#09090b] text-balance mb-5">
-                            What Our Customers Say
-                        </h2>
-                        <p class="text-[#71717a] text-base leading-7 tracking-[0.01em] mb-6 max-w-sm">
-                            Loved by business owners who manage queues, reviews, and campaigns from one unified dashboard.
-                        </p>
-                        <a href="https://ownerhive.com/contact/" class="nav-cta-luxury group inline-flex" aria-label="Book a demo">
-                            <span>Book a demo</span>
-                            <span class="nav-cta-icon-pill">
-                                <svg class="w-3.5 h-3.5 text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                                    <polyline points="7 7 17 7 17 17"></polyline>
-                                </svg>
-                            </span>
-                        </a>
-                    </div>
-
-                    <!-- Right: fading masonry columns -->
-                    <div class="lg:col-span-8 xl:col-span-8 relative">
-                        <div class="pointer-events-none absolute top-0 inset-x-0 h-20 sm:h-28 bg-gradient-to-b from-[#fcfcfc] via-[#fcfcfc]/85 to-transparent z-10" aria-hidden="true"></div>
-                        <div class="pointer-events-none absolute bottom-0 inset-x-0 h-20 sm:h-28 bg-gradient-to-t from-[#fcfcfc] via-[#fcfcfc]/85 to-transparent z-10" aria-hidden="true"></div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 overflow-hidden max-h-[560px] sm:max-h-[620px]">
-
-                            <!-- Col 1 — up -->
-                            <div class="flex flex-col gap-4 testimonials-col-up" style="animation: testimonialScrollUp 30s linear infinite;">
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"OwnerHive completely changed how we manage our daily walk-ins. The queue system is intuitive and our customers actually love the SMS updates."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Marcus Kim</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"The AI-powered review booster alone paid for the entire subscription within the first month. We went from 42 Google reviews to 180+ in just 8 weeks."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Priya Rao</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Setting up took under 30 minutes. The dashboard is incredibly clean and the AI scheduling suggestions have saved us hours every single week."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">James Lee</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="4 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#8b5cf6]/30" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"We tried three other platforms before OwnerHive. Nothing came close to this level of polish. The campaign scheduler alone saves us 6+ hours a week."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Aisha Thompson</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"OwnerHive completely changed how we manage our daily walk-ins. The queue system is intuitive and our customers actually love the SMS updates."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Marcus Kim</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"The AI-powered review booster alone paid for the entire subscription within the first month. We went from 42 Google reviews to 180+ in just 8 weeks."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Priya Rao</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Setting up took under 30 minutes. The dashboard is incredibly clean and the AI scheduling suggestions have saved us hours every single week."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">James Lee</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="4 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#8b5cf6]/30" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"We tried three other platforms before OwnerHive. Nothing came close to this level of polish. The campaign scheduler alone saves us 6+ hours a week."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Aisha Thompson</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            </div>
-
-                            <!-- Col 2 — down -->
-                            <div class="flex flex-col gap-4 testimonials-col-down hidden sm:flex" style="animation: testimonialScrollDown 34s linear infinite; margin-top: -120px;">
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"The multi-platform posting feature is outstanding. One post, published across Google, Instagram, and Facebook simultaneously. Our engagement tripled."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Sofia Nakamura</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Real-time queue visibility for our customers is brilliant. They check their position on their phone and only walk in when it's their turn."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">David Mensah</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Customer satisfaction went up 40% in two months. The private feedback channel catches unhappy customers before they ever post a bad public review."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Laura Chen</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"I manage 3 locations and OwnerHive is the only tool that gives me a unified view across all of them in real time. Worth every penny."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Rafael Barros</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"The multi-platform posting feature is outstanding. One post, published across Google, Instagram, and Facebook simultaneously. Our engagement tripled."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Sofia Nakamura</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Real-time queue visibility for our customers is brilliant. They check their position on their phone and only walk in when it's their turn."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">David Mensah</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Customer satisfaction went up 40% in two months. The private feedback channel catches unhappy customers before they ever post a bad public review."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Laura Chen</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"I manage 3 locations and OwnerHive is the only tool that gives me a unified view across all of them in real time. Worth every penny."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Rafael Barros</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            </div>
-
-                            <!-- Col 3 — up -->
-                            <div class="flex flex-col gap-4 testimonials-col-up-2 hidden lg:flex" style="animation: testimonialScrollUp 38s linear infinite; margin-top: -60px;">
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"The AI content generator writes better captions than I ever could. It matches our brand voice perfectly and saves me hours crafting posts every week."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Nina Williams</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Our no-show rate dropped by 60% after enabling the web check-in reminders. Customers are actually showing up prepared and on time now."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Olivia Anderson</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="4 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#8b5cf6]/30" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Best investment I made for my photography studio. The analytics dashboard tells me exactly which post types drive the most bookings."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Tom Keller</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Switched from a custom-built system that cost us $12k. OwnerHive does more, costs less, and our team adopted it in a single afternoon."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Yuki Park</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"The AI content generator writes better captions than I ever could. It matches our brand voice perfectly and saves me hours crafting posts every week."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Nina Williams</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Our no-show rate dropped by 60% after enabling the web check-in reminders. Customers are actually showing up prepared and on time now."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Olivia Anderson</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="4 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#8b5cf6]/30" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Best investment I made for my photography studio. The analytics dashboard tells me exactly which post types drive the most bookings."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Tom Keller</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            <article class="testimonial-card rounded-2xl bg-[#f5f0ff] border border-[#e4e4e7] px-6 py-7 flex flex-col items-center text-center gap-4 transition-all duration-300 hover:border-[#8b5cf6]/45 hover:shadow-[0_10px_10px_rgba(205,95,255,0.12)]">
-                                <p class="text-[#71717a] text-[15px] leading-relaxed tracking-[0.01em]">"Switched from a custom-built system that cost us $12k. OwnerHive does more, costs less, and our team adopted it in a single afternoon."</p>
-                                <div class="font-semibold text-[#09090b] text-sm">Yuki Park</div>
-                                <div class="flex items-center justify-center gap-0.5" aria-label="5 out of 5 stars"><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-3.5 h-3.5 text-[#126bdc]" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-                            </article>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <style>
-                #testimonials .testimonial-card {
-                    position: relative;
-                    isolation: isolate;
-                    overflow: hidden;
-                    padding: 1.25rem;
-                    gap: 0;
-                    background:
-                        radial-gradient(circle at 88% 10%, rgba(139, 92, 246, 0.2), transparent 34%),
-                        linear-gradient(145deg, #faf8ff 0%, #f1ebff 100%);
-                    border: 1px solid rgba(139, 92, 246, 0.22);
-                    box-shadow:
-                        0 14px 32px -24px rgba(139, 92, 246, 0.42),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.9);
-                    transform: translateZ(0);
-                }
-
-                #testimonials .testimonial-card > p {
-                    margin-bottom: 0.9rem;
-                }
-
-                #testimonials .testimonial-card > p + div {
-                    margin-bottom: 0.4rem;
-                }
-
-                #testimonials .testimonials-col-up .testimonial-card:nth-child(2n) {
-                    background:
-                        radial-gradient(circle at 10% 0%, rgba(139, 92, 246, 0.17), transparent 36%),
-                        linear-gradient(145deg, #fbf9ff 0%, #eee8ff 100%);
-                }
-
-                #testimonials .testimonials-col-down .testimonial-card:nth-child(2n + 1) {
-                    background:
-                        radial-gradient(circle at 90% 8%, rgba(139, 92, 246, 0.18), transparent 34%),
-                        linear-gradient(145deg, #faf7ff 0%, #eee7ff 55%, #f5f0ff 100%);
-                }
-
-                #testimonials .testimonials-col-up-2 .testimonial-card:nth-child(2n) {
-                    background:
-                        radial-gradient(circle at 12% 8%, rgba(139, 92, 246, 0.2), transparent 35%),
-                        linear-gradient(145deg, #fbf9ff 0%, #eee7ff 100%);
-                }
-
-                #testimonials .testimonial-card::before {
-                    content: '';
-                    position: absolute;
-                    z-index: -1;
-                    top: -2.75rem;
-                    right: -2.75rem;
-                    width: 7rem;
-                    height: 7rem;
-                    border-radius: 9999px;
-                    border: 1px solid rgba(139, 92, 246, 0.18);
-                    box-shadow:
-                        0 0 0 12px rgba(139, 92, 246, 0.035),
-                        0 0 0 28px rgba(139, 92, 246, 0.025);
-                }
-
-                #testimonials .testimonial-card::after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 18%;
-                    right: 18%;
-                    height: 1px;
-                    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.45), #8b5cf6, rgba(139, 92, 246, 0.45), transparent);
-                    opacity: 0.55;
-                }
-
-                #testimonials .testimonial-card:hover {
-                    box-shadow:
-                        0 20px 38px -24px rgba(139, 92, 246, 0.55),
-                        0 12px 24px -22px rgba(139, 92, 246, 0.65),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.95);
-                    transform: translateY(-3px);
-                }
-
-                #testimonials .testimonial-card > div[aria-label] {
-                    padding: 0;
-                    border-radius: 0;
-                    background: transparent;
-                    border: none;
-                    box-shadow: none;
-                }
-
-                #testimonials .testimonial-card > div[aria-label] svg {
-                    color: #f5b82e;
-                }
-
-                #testimonials .testimonial-card > div[aria-label^="4"] svg:last-child {
-                    color: #d4d4d8;
-                }
-
-                @keyframes testimonialScrollUp {
-                    0% { transform: translateY(0); }
-                    100% { transform: translateY(calc(-50% - 0.5rem)); }
-                }
-                @keyframes testimonialScrollDown {
-                    0% { transform: translateY(calc(-50% - 0.5rem)); }
-                    100% { transform: translateY(0); }
-                }
-                @media (prefers-reduced-motion: reduce) {
-                    #testimonials .testimonials-col-up,
-                    #testimonials .testimonials-col-down,
-                    #testimonials .testimonials-col-up-2 {
-                        animation: none !important;
-                        margin-top: 0 !important;
-                        transform: none !important;
-                    }
-                }
-            </style>
-        </section>
-        <!-- /END TESTIMONIALS SECTION -->
-
-        <!-- AI-powered closing call to action -->
-        <section class="relative overflow-hidden py-16 sm:py-24 px-4 sm:px-6 lg:px-12 bg-[#fcfcfc]" id="contact" aria-labelledby="cta-title">
-            <div class="max-w-[1400px] mx-auto">
-                <div class="relative rounded-3xl p-8 sm:p-12 lg:p-16 shadow-[0_24px_65px_-24px_rgba(18,107,220,0.24)] overflow-hidden"
-                    style="background:
-                        radial-gradient(circle at 18% 12%, rgba(139,92,246,0.10), transparent 30%),
-                        linear-gradient(135deg, #fcfcfc 0%, #f7f9ff 52%, #f2efff 100%);">
-                    
-                    <!-- ======================================================== -->
-                    <!-- BACKGROUND GRADIENT LINES, GEOMETRIC GRID & CUT ACCENTS  -->
-                    <!-- ======================================================== -->
-                    <!-- Luminous radial ambient lighting behind content -->
-                    <div class="absolute -top-24 -left-20 w-96 h-96 rounded-full bg-[#126bdc]/20 blur-[90px] pointer-events-none"></div>
-                    <div class="absolute -bottom-24 left-1/3 w-80 h-80 rounded-full bg-[#8b5cf6]/20 blur-[80px] pointer-events-none"></div>
-
-                    <!-- Right-side neural light field -->
-                    <div class="absolute inset-y-0 right-0 w-[56%] pointer-events-none hidden lg:block overflow-hidden"
-                        style="background: linear-gradient(90deg, transparent 0%, rgba(18,107,220,0.14) 14%, #126bdc 42%, #0f58b6 78%, #1559b6 100%);" aria-hidden="true">
-                        
-                        <!-- Internal glowing mesh & subtle micro-grid inside blue facet -->
-                        <div class="absolute inset-0 opacity-15 [background-image:linear-gradient(rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.4)_1px,transparent_1px)] [background-size:28px_28px] [mask-image:radial-gradient(ellipse_at_70%_50%,black,transparent_70%)]"></div>
-                        <!-- Ambient violet light inside right side -->
-                        <div class="absolute -bottom-20 -right-20 w-80 h-80 rounded-full bg-[#8b5cf6]/40 blur-3xl"></div>
-                        <div class="absolute top-10 right-10 w-64 h-64 rounded-full bg-cyan-400/25 blur-3xl"></div>
-                    </div>
-
-                    <!-- Precision Angled Cuts & Hairline Accent Laser Lines along the facet edge -->
-                    <div class="absolute inset-y-0 right-0 w-full lg:w-1/2 pointer-events-none hidden overflow-hidden" aria-hidden="true">
-                        <svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100" fill="none">
-                            <!-- Primary sharp cut line with gradient shimmer -->
-                            <line x1="14" y1="0" x2="0" y2="100" stroke="url(#cta-cut-grad-1)" stroke-width="0.85" />
-                            <!-- Parallel precision echo line -->
-                            <line x1="18" y1="0" x2="4" y2="100" stroke="url(#cta-cut-grad-2)" stroke-width="0.45" stroke-dasharray="2 2" />
-                            <!-- Third faint cut reflection -->
-                            <line x1="22" y1="0" x2="8" y2="100" stroke="rgba(255,255,255,0.12)" stroke-width="0.35" />
-                            
-                            <!-- Cross-directional geometric accent cut lines -->
-                            <line x1="30" y1="0" x2="90" y2="100" stroke="rgba(255,255,255,0.07)" stroke-width="0.5" />
-                            <line x1="60" y1="0" x2="100" y2="70" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" stroke-dasharray="4 6" />
-
-                            <defs>
-                                <linearGradient id="cta-cut-grad-1" x1="0" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8" />
-                                    <stop offset="35%" stop-color="#80b4f8" stop-opacity="0.9" />
-                                    <stop offset="70%" stop-color="#cd5fff" stop-opacity="0.7" />
-                                    <stop offset="100%" stop-color="#ffffff" stop-opacity="0.3" />
-                                </linearGradient>
-                                <linearGradient id="cta-cut-grad-2" x1="0" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.2" />
-                                    <stop offset="50%" stop-color="#ffffff" stop-opacity="0.6" />
-                                    <stop offset="100%" stop-color="#126bdc" stop-opacity="0.1" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-
-                        <!-- Moving Laser Shimmer traveling down the cut facet -->
-                        <div class="absolute inset-0 cta-laser-beam opacity-40 bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none"></div>
-                    </div>
-
-                    <!-- Mobile/Tablet fallback gradient wash -->
-                    <div class="absolute inset-x-0 bottom-0 h-[46%] bg-gradient-to-b from-transparent via-[#126bdc]/8 to-[#126bdc]/18 pointer-events-none lg:hidden" aria-hidden="true"></div>
-
-                    <!-- ======================================================== -->
-                    <!-- RANDOMLY MOVING / FLOATING MAIN BRAND LOGO EMBLEM ICONS  -->
-                    <!-- (Main Logo Icon Only - Not the content/text wordmark)     -->
-                    <!-- ======================================================== -->
-                    <!-- Floating Main Brand Logo Emblem 1: Top-Right Over Luxury Blue Canvas -->
-                    <div class="absolute top-6 sm:top-8 right-8 sm:right-16 z-20 pointer-events-none cta-floating-logo-1 hidden sm:block">
-                        <div class="relative group">
-                            <!-- Ambient glowing aura -->
-                            <div class="absolute -inset-2 bg-gradient-to-tr from-cyan-400/40 via-purple-500/40 to-pink-500/30 rounded-2xl blur-lg"></div>
-                            <!-- Standalone Hexagon Emblem Card -->
-                            <div class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-b from-white/20 to-white/5 backdrop-blur-xl border border-white/40 shadow-[0_16px_36px_rgba(0,0,0,0.3)] flex items-center justify-center p-2.5">
-                                <svg class="w-full h-full drop-shadow-[0_4px_12px_rgba(205,95,255,0.45)]" viewBox="0 0 100 100" fill="none">
-                                    <defs>
-                                        <linearGradient id="cta-hex-bg-1" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                                            <stop offset="0%" stop-color="#b03cf6" />
-                                            <stop offset="100%" stop-color="#126bdc" />
-                                        </linearGradient>
-                                    </defs>
-                                    <rect width="100" height="100" rx="26" fill="url(#cta-hex-bg-1)" />
-                                    <!-- Inner White Hexagon Mark exactly matching OwnerHive brand -->
-                                    <polygon points="50,18 78,34 78,66 50,82 22,66 22,34" stroke="#ffffff" stroke-width="7" stroke-linejoin="round" fill="none" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Floating Main Brand Logo Emblem 2: Floating near center-right division -->
-                    <div class="absolute bottom-10 lg:bottom-14 right-[42%] lg:right-[47%] z-20 pointer-events-none cta-floating-logo-2 hidden">
-                        <div class="relative group">
-                            <!-- Subtle blue/violet glow -->
-                            <div class="absolute -inset-1.5 bg-[#126bdc]/30 rounded-2xl blur-md"></div>
-                            <div class="relative w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-white/90 backdrop-blur-lg border border-blue-200 shadow-[0_10px_28px_rgba(18,107,220,0.22)] flex items-center justify-center p-2">
-                                <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
-                                    <defs>
-                                        <linearGradient id="cta-hex-bg-2" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                                            <stop offset="0%" stop-color="#9333ea" />
-                                            <stop offset="100%" stop-color="#126bdc" />
-                                        </linearGradient>
-                                    </defs>
-                                    <rect width="100" height="100" rx="26" fill="url(#cta-hex-bg-2)" />
-                                    <polygon points="50,18 78,34 78,66 50,82 22,66 22,34" stroke="#ffffff" stroke-width="7" stroke-linejoin="round" fill="none" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Floating Main Brand Logo Emblem 3: Soft ambient background floater near left corner -->
-                    <div class="absolute top-12 left-8 z-10 pointer-events-none cta-floating-logo-3 hidden">
-                        <div class="w-8 h-8 rounded-xl bg-white/70 backdrop-blur-sm border border-blue-200/60 shadow-sm flex items-center justify-center p-1.5 opacity-75">
-                            <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
-                                <rect width="100" height="100" rx="24" fill="url(#cta-hex-bg-1)" />
-                                <polygon points="50,18 78,34 78,66 50,82 22,66 22,34" stroke="#ffffff" stroke-width="7" stroke-linejoin="round" fill="none" />
-                            </svg>
-                        </div>
-                    </div>
-
-                    <!-- Main Grid Content Layer -->
-                    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
-                        <!-- Left Side (50%): Content pinned to top, buttons & badges pinned to bottom -->
-                        <div class="lg:col-span-6 xl:col-span-6 text-left flex flex-col justify-between">
-                            <!-- Top content block -->
-                            <div>
-                                <p class="text-sm font-semibold tracking-[0.02em] text-[#126bdc] mb-3">Ready when you are</p>
-                                <h2 id="cta-title" class="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[#09090b] leading-[1.16] mb-3 text-balance">
-                                    Ready to transform your daily operations?
-                                </h2>
-                                <p class="text-sm sm:text-base text-[#71717a] leading-relaxed max-w-lg font-normal mb-8 lg:mb-0">
-                                    Join thousands of forward-thinking businesses managing queues, reviews, and multi-network campaigns from one unified AI dashboard.
-                                </p>
-                            </div>
-
-                            <!-- Bottom action block (buttons pinned to bottom) -->
-                            <div class="pt-6 lg:pt-8">
-                                <!-- Single primary CTA -->
-                                <div class="flex flex-col sm:flex-row items-stretch sm:items-center mb-4">
-                                    <a href="https://ownerhive.com/contact/" class="nav-cta-luxury nav-cta-hero group" id="cta-primary-btn" aria-label="Get Started Free">
-                                        <span>Get Started Free</span>
-                                        <span class="nav-cta-icon-pill">
-                                            <svg class="w-4 h-4 text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <line x1="7" y1="17" x2="17" y2="7"></line>
-                                                <polyline points="7 7 17 7 17 17"></polyline>
-                                            </svg>
-                                        </span>
-                                    </a>
-                                </div>
-
-                                <!-- System Status text line directly at the bottom of the buttons -->
-                                <div class="inline-flex flex-wrap items-center gap-2 text-xs text-[#71717a] font-medium">
-                                    <span class="inline-flex items-center gap-1.5">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                                        <span>Systems Operational</span>
-                                    </span>
-                                    <span class="text-zinc-400">&bull;</span>
-                                    <span>SOC-2 Certified</span>
-                                    <span class="text-zinc-400">&bull;</span>
-                                    <span>99.9% SLA Guarantee</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Right Side (50% over Luxury Blue): Whitish 3D Clean Image Preview with glowing cuts -->
-                        <div class="lg:col-span-6 xl:col-span-6 relative flex items-center">
-                            <!-- Subtle glowing aura behind the whitish card -->
-                            <div class="absolute -inset-3 bg-gradient-to-tr from-white/30 via-cyan-300/20 to-purple-400/25 rounded-3xl blur-2xl pointer-events-none hidden lg:block"></div>
-                            
-                            <div class="relative w-full rounded-2xl overflow-hidden border border-white/50 bg-white shadow-[0_25px_50px_-12px_rgba(9,9,11,0.25)] aspect-[16/10] group">
-                                <img src="assets/ownerhive-cta-white.jpg"
-                                    alt="OwnerHive modern clean dashboard analytics"
-                                    class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
-                                    loading="lazy" width="1280" height="720">
-
-                                <!-- Glass corner reflection cut overlay -->
-                                <div class="absolute inset-0 pointer-events-none bg-gradient-to-tr from-transparent via-white/5 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Luxury AI Platform Footer -->
