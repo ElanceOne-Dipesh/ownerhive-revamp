@@ -185,6 +185,255 @@
             border-color: rgba(255, 255, 255, 0.6);
             color: #ffffff;
         }
+
+        @keyframes hero-float-left {
+            0%, 100% { transform: rotate(-8deg) translateY(0); }
+            50% { transform: rotate(-8deg) translateY(-14px); }
+        }
+
+        @keyframes hero-float-right {
+            0%, 100% { transform: rotate(8deg) translateY(0); }
+            50% { transform: rotate(8deg) translateY(-14px); }
+        }
+
+        .hero-float-left {
+            animation: hero-float-left 5.6s ease-in-out infinite;
+        }
+
+        .hero-float-right {
+            animation: hero-float-right 6.2s ease-in-out infinite;
+            animation-delay: -2.6s;
+        }
+
+        .build-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid #e4e4e7;
+            background: #09090b;
+            isolation: isolate;
+            transition: border-color 0.35s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
+        }
+
+        .build-card:hover {
+            border-color: #126bdc;
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px -22px rgba(18, 107, 220, 0.5);
+        }
+
+        .build-card img {
+            transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .build-card:hover img {
+            transform: scale(1.07);
+        }
+
+        .build-card-arrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(252, 252, 252, 0.28);
+            color: #fcfcfc;
+            background: rgba(252, 252, 252, 0.08);
+            transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .build-card:hover .build-card-arrow {
+            background: #126bdc;
+            border-color: #126bdc;
+            transform: translateX(2px);
+        }
+
+        .approach-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .approach-item {
+            display: grid;
+            grid-template-columns: 10rem 1px minmax(0, 1fr);
+            grid-template-areas: "label rule copy";
+            column-gap: 2rem;
+            align-items: start;
+            width: min(100%, 42rem);
+        }
+
+        .approach-item.is-end {
+            margin-left: auto;
+            grid-template-columns: minmax(0, 1fr) 1px 10rem;
+            grid-template-areas: "copy rule label";
+        }
+
+        .approach-label-wrap {
+            grid-area: label;
+            padding-top: 0.55rem;
+        }
+
+        .approach-item.is-end .approach-label-wrap {
+            text-align: right;
+        }
+
+        .approach-label {
+            margin: 0;
+            font-size: 0.68rem;
+            font-weight: 500;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: rgba(228, 228, 231, 0.72);
+            transition: color 0.45s ease;
+        }
+
+        .approach-rule {
+            grid-area: rule;
+            position: relative;
+            align-self: stretch;
+            min-height: 5rem;
+            background: linear-gradient(180deg, #126bdc 0%, #8b5cf6 58%, transparent 100%);
+            opacity: 0.5;
+            box-shadow: 0 0 14px rgba(18, 107, 220, 0.18);
+            transition: opacity 0.45s ease, box-shadow 0.45s ease;
+        }
+
+        .approach-rule::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 6px;
+            height: 6px;
+            border-radius: 1px;
+            transform: translate(-50%, -35%) rotate(45deg);
+            background: linear-gradient(135deg, #126bdc, #8b5cf6);
+            box-shadow: 0 0 12px rgba(139, 92, 246, 0.55);
+        }
+
+        .approach-copy {
+            grid-area: copy;
+            position: relative;
+            padding-bottom: 1.65rem;
+        }
+
+        .approach-copy::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 12%;
+            bottom: 0;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(18, 107, 220, 0.35), rgba(228, 228, 231, 0.16) 38%, transparent);
+            transition: background 0.45s ease, box-shadow 0.45s ease, right 0.45s ease, left 0.45s ease;
+        }
+
+        .approach-item.is-end .approach-copy {
+            text-align: right;
+        }
+
+        .approach-item.is-end .approach-copy::after {
+            left: 12%;
+            right: 0;
+            background: linear-gradient(90deg, transparent, rgba(228, 228, 231, 0.16) 38%, rgba(139, 92, 246, 0.35));
+        }
+
+        .approach-copy h3 {
+            margin: 0;
+            font-size: 1.35rem;
+            font-weight: 500;
+            letter-spacing: -0.025em;
+            color: #fcfcfc;
+            line-height: 1.2;
+        }
+
+        .approach-copy p {
+            margin: 0.7rem 0 0;
+            font-size: 0.9rem;
+            line-height: 1.75;
+            letter-spacing: 0.01em;
+            color: rgba(228, 228, 231, 0.68);
+            max-width: 28rem;
+        }
+
+        .approach-item.is-end .approach-copy p {
+            margin-left: auto;
+        }
+
+        .approach-item:hover .approach-label {
+            color: #fcfcfc;
+        }
+
+        .approach-item:hover .approach-rule {
+            opacity: 1;
+            box-shadow: 0 0 18px rgba(139, 92, 246, 0.4);
+        }
+
+        .approach-item:hover .approach-copy::after {
+            right: 0;
+            background: linear-gradient(90deg, #126bdc, #8b5cf6);
+            box-shadow: 0 0 10px rgba(18, 107, 220, 0.35);
+        }
+
+        .approach-item.is-end:hover .approach-copy::after {
+            left: 0;
+            background: linear-gradient(90deg, #126bdc, #8b5cf6);
+        }
+
+        @media (min-width: 640px) {
+            .approach-list {
+                gap: 4.75rem;
+            }
+        }
+
+        @media (max-width: 639px) {
+            .approach-list {
+                gap: 2.75rem;
+            }
+
+            .approach-item,
+            .approach-item.is-end {
+                width: 100%;
+                margin-left: 0;
+                grid-template-columns: 1fr;
+                grid-template-areas: "label" "copy";
+                row-gap: 0.9rem;
+            }
+
+            .approach-rule {
+                display: none;
+            }
+
+            .approach-label-wrap::after {
+                content: '';
+                display: block;
+                width: 1.75rem;
+                height: 1px;
+                margin-top: 0.7rem;
+                background: linear-gradient(90deg, #126bdc, #8b5cf6);
+            }
+
+            .approach-item.is-end .approach-label-wrap,
+            .approach-item.is-end .approach-copy {
+                text-align: left;
+            }
+
+            .approach-item.is-end .approach-copy p {
+                margin-left: 0;
+            }
+
+            .approach-item.is-end .approach-copy::after {
+                left: 0;
+                right: 12%;
+            }
+
+            .approach-copy h3 {
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
 
@@ -194,33 +443,34 @@
         <div class="max-w-8xl mx-auto px-6 sm:px-10 lg:px-16 h-20 flex items-center justify-between">
             <div id="nav-island" class="relative flex items-center justify-between flex-1 mr-4 lg:mr-6 h-14 sm:h-16 px-3.5 sm:px-5 rounded-2xl">
                 <a href="index.html" class="inline-flex items-center shrink-0 hover:opacity-95 transition-opacity" aria-label="OwnerHive home">
-                    <img src="assets/ownerhive-logo.webp" alt="OwnerHive" class="h-8 sm:h-9 w-auto object-contain" width="1536" height="366">
+                    <img src="assets/ownerhive-logo-inverted.webp" alt="OwnerHive" class="site-logo-light h-8 sm:h-9 w-auto object-contain" width="1536" height="366">
+                    <img src="assets/ownerhive-logo.webp" alt="OwnerHive" class="site-logo-dark hidden h-8 sm:h-9 w-auto object-contain" width="1536" height="366">
                 </a>
 
                 <nav class="hidden lg:flex items-center gap-7 lg:gap-8 text-sm font-semibold" aria-label="Main navigation">
                     <div class="nav-dropdown-wrapper relative" data-target="mega-solutions">
-                        <button type="button" class="nav-item-btn px-1 py-1.5 text-[#52525b] hover:text-[#126bdc] transition-colors duration-200 flex items-center gap-1.5 focus:outline-none cursor-pointer" aria-expanded="false" aria-controls="mega-solutions">
+                        <button type="button" class="nav-item-btn px-1 py-1.5 text-[#fcfcfc]/85 hover:text-[#fcfcfc] transition-colors duration-200 flex items-center gap-1.5 focus:outline-none cursor-pointer" aria-expanded="false" aria-controls="mega-solutions">
                             <span>Platform</span>
                         </button>
                     </div>
                     <div class="nav-dropdown-wrapper relative" data-target="mega-solutions">
-                        <button type="button" class="nav-item-btn px-1 py-1.5 text-[#52525b] hover:text-[#126bdc] transition-colors duration-200 flex items-center gap-1.5 focus:outline-none cursor-pointer" aria-expanded="false" aria-controls="mega-solutions">
+                        <button type="button" class="nav-item-btn px-1 py-1.5 text-[#fcfcfc]/85 hover:text-[#fcfcfc] transition-colors duration-200 flex items-center gap-1.5 focus:outline-none cursor-pointer" aria-expanded="false" aria-controls="mega-solutions">
                             <span>Solutions</span>
-                            <svg class="w-3.5 h-3.5 text-[#a1a1aa]" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                            <svg class="nav-dots-icon w-3.5 h-3.5 text-[#e4e4e7]/70" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                                 <circle cx="4" cy="4" r="1.5" /><circle cx="8" cy="4" r="1.5" /><circle cx="12" cy="4" r="1.5" />
                                 <circle cx="4" cy="10" r="1.5" /><circle cx="8" cy="10" r="1.5" /><circle cx="12" cy="10" r="1.5" />
                             </svg>
                         </button>
                     </div>
                     <div class="nav-dropdown-wrapper relative" data-target="mega-company">
-                        <button type="button" class="nav-item-btn px-1 py-1.5 text-[#126bdc] transition-colors duration-200 flex items-center gap-1.5 focus:outline-none cursor-pointer" aria-expanded="false" aria-controls="mega-company" aria-current="page">
+                        <button type="button" class="nav-item-btn px-1 py-1.5 text-[#fcfcfc] transition-colors duration-200 flex items-center gap-1.5 focus:outline-none cursor-pointer" aria-expanded="false" aria-controls="mega-company" aria-current="page">
                             <span>Company</span>
                         </button>
                     </div>
                     <div class="nav-dropdown-wrapper relative" data-target="mega-resources">
-                        <button type="button" class="nav-item-btn px-1 py-1.5 text-[#52525b] hover:text-[#126bdc] transition-colors duration-200 flex items-center gap-1.5 focus:outline-none cursor-pointer" aria-expanded="false" aria-controls="mega-resources">
+                        <button type="button" class="nav-item-btn px-1 py-1.5 text-[#fcfcfc]/85 hover:text-[#fcfcfc] transition-colors duration-200 flex items-center gap-1.5 focus:outline-none cursor-pointer" aria-expanded="false" aria-controls="mega-resources">
                             <span>Resources</span>
-                            <svg class="w-3.5 h-3.5 text-[#a1a1aa]" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                            <svg class="nav-dots-icon w-3.5 h-3.5 text-[#e4e4e7]/70" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
                                 <circle cx="4" cy="4" r="1.5" /><circle cx="8" cy="4" r="1.5" /><circle cx="12" cy="4" r="1.5" />
                                 <circle cx="4" cy="10" r="1.5" /><circle cx="8" cy="10" r="1.5" /><circle cx="12" cy="10" r="1.5" />
                             </svg>
@@ -362,10 +612,10 @@
                         </svg>
                     </span>
                 </a>
-                <a href="https://app.ownerhive.com/" class="hidden sm:inline-flex w-[2.65rem] h-[2.65rem] rounded-full items-center justify-center text-[#18181b] bg-[#f4f4f5] border border-[#e4e4e7] hover:text-[#126bdc] hover:bg-[#eef5ff] hover:border-[#bfdbfe] transition-all" aria-label="Log in to OwnerHive">
+                <a href="https://app.ownerhive.com/" id="nav-login" class="hidden sm:inline-flex w-[2.65rem] h-[2.65rem] rounded-full items-center justify-center text-[#fcfcfc] bg-white/10 border border-[#e4e4e7]/25 hover:bg-white/20 hover:border-[#e4e4e7]/50 transition-all" aria-label="Log in to OwnerHive">
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                 </a>
-                <button type="button" id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg border border-[#e4e4e7] text-[#09090b] focus:outline-none" aria-label="Open mobile navigation">
+                <button type="button" id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg border border-[#e4e4e7]/30 text-[#fcfcfc] focus:outline-none" aria-label="Open mobile navigation">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
@@ -415,65 +665,113 @@
 
     <main id="top">
         <!-- Hero — Mission -->
-        <section class="relative min-h-screen bg-[#fcfcfc] flex items-center justify-center px-6 sm:px-10" aria-labelledby="about-hero-title">
-            <h1 id="about-hero-title" class="max-w-4xl text-center text-[2.35rem] sm:text-5xl md:text-6xl lg:text-[4.35rem] font-semibold tracking-[-0.02em] [word-spacing:0.04em] leading-[1.12] text-[#09090b] text-balance">
+        <section class="relative min-h-screen overflow-hidden bg-[#09090b] flex items-center justify-center px-6 sm:px-10" aria-labelledby="about-hero-title">
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[480px] bg-[#126bdc]/30 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute bottom-0 right-10 w-[480px] h-[360px] bg-[#8b5cf6]/25 rounded-full blur-[110px] pointer-events-none"></div>
+            <h1 id="about-hero-title" class="relative z-10 max-w-4xl -translate-y-8 sm:-translate-y-12 text-center text-[2.35rem] sm:text-5xl md:text-6xl lg:text-[4.35rem] font-semibold tracking-[-0.02em] [word-spacing:0.04em] leading-[1.12] text-[#fcfcfc] text-balance">
                 The company behind<br class="hidden sm:block">
                 owners who grow.
             </h1>
-            <a href="#building" class="absolute bottom-10 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#09090b] text-[#fcfcfc] flex items-center justify-center hover:scale-110 hover:bg-[#126bdc] transition-all duration-300" aria-label="Scroll to what we are building">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-            </a>
+            <div class="absolute z-10 bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 flex items-center justify-center gap-12 sm:gap-16 md:gap-24">
+                <img src="assets/social.jpg" alt="" aria-hidden="true" class="hero-float-left w-28 sm:w-40 md:w-52 lg:w-60 aspect-[16/10] rounded-2xl border border-[#e4e4e7]/40 object-cover shadow-[0_18px_50px_-18px_rgba(18,107,220,0.55)] pointer-events-none select-none" width="900" height="600">
+                <a href="#building" class="relative z-10 w-12 h-12 shrink-0 rounded-full bg-[#fcfcfc] text-[#09090b] flex items-center justify-center hover:scale-110 hover:bg-[#126bdc] hover:text-[#fcfcfc] transition-all duration-300" aria-label="Scroll to what we are building">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </a>
+                <img src="assets/work.jpg" alt="" aria-hidden="true" class="hero-float-right w-28 sm:w-40 md:w-52 lg:w-60 aspect-[16/10] rounded-2xl border border-[#e4e4e7]/40 object-cover shadow-[0_18px_50px_-18px_rgba(139,92,246,0.5)] pointer-events-none select-none" width="900" height="600">
+            </div>
         </section>
 
         <!-- What OwnerHive is building -->
         <section class="py-20 sm:py-24 px-6 sm:px-10 lg:px-16 bg-[#fcfcfc]" id="building" aria-labelledby="building-title">
             <div class="max-w-8xl mx-auto">
-                <div class="max-w-2xl mb-12">
-                    <p class="text-sm font-semibold tracking-[0.02em] text-[#126bdc] mb-3">What we are building</p>
-                    <h2 id="building-title" class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight [word-spacing:0.06em] leading-[1.15] text-[#09090b] text-balance">One account. Multiple business tools.</h2>
-                    <p class="mt-4 text-base leading-7 text-[#71717a]">Every business owner deserves serious products — without an enterprise price tag or a stack of disconnected apps. Start with the product that solves today's problem. Add the next when you are ready.</p>
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-12 mb-12 lg:mb-14">
+                    <div class="max-w-2xl">
+                        <p class="text-sm font-semibold tracking-[0.02em] text-[#126bdc] mb-3">What we are building</p>
+                        <h2 id="building-title" class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.15] text-[#09090b] text-balance">One account. Multiple business tools.</h2>
+                    </div>
+                    <p class="max-w-sm lg:pb-1 text-base leading-7 tracking-[0.01em] text-[#71717a]">Start with one product. Add the next when you are ready — one account, not a stack of apps.</p>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                    <a href="products/social-manager.html" class="group rounded-[20px] border border-[#e4e4e7] bg-white overflow-hidden hover:border-[#126bdc] transition-all duration-300">
-                        <div class="aspect-[16/10] overflow-hidden bg-[#f4f4f5]">
-                            <img src="assets/social.jpg" alt="Social Manager" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" width="900" height="600">
+                    <a href="products/social-manager.html" class="build-card group aspect-[4/5]" aria-label="Explore Social Manager">
+                        <img src="assets/social.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" width="900" height="600">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/55 to-[#09090b]/10"></div>
+                        <div class="relative z-10 flex items-center px-4 pt-4">
+                            <span class="text-[10px] font-bold uppercase tracking-[0.16em] text-[#fcfcfc] bg-white/10 border border-white/15 backdrop-blur-md rounded-full px-2.5 py-1">SaaS</span>
                         </div>
-                        <div class="p-5">
-                            <p class="text-[11px] font-bold uppercase tracking-wider text-[#126bdc] mb-1">SaaS</p>
-                            <h3 class="text-lg font-semibold text-[#09090b] group-hover:text-[#126bdc] transition-colors">Social Manager</h3>
-                            <p class="mt-2 text-sm leading-6 text-[#71717a]">Plan, publish, and measure Instagram, Facebook, and Google from one feed.</p>
-                        </div>
-                    </a>
-                    <a href="https://ownerhive.com/products/queue-manager/" class="group rounded-[20px] border border-[#e4e4e7] bg-white overflow-hidden hover:border-[#126bdc] transition-all duration-300">
-                        <div class="aspect-[16/10] overflow-hidden bg-[#f4f4f5]">
-                            <img src="assets/work.jpg" alt="Queue Manager" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" width="900" height="600">
-                        </div>
-                        <div class="p-5">
-                            <p class="text-[11px] font-bold uppercase tracking-wider text-[#126bdc] mb-1">Digital tools</p>
-                            <h3 class="text-lg font-semibold text-[#09090b] group-hover:text-[#126bdc] transition-colors">Queue Manager</h3>
-                            <p class="mt-2 text-sm leading-6 text-[#71717a]">Virtual waitlists over SMS — no customer app, live wait times, show up when it's their turn.</p>
-                        </div>
-                    </a>
-                    <a href="https://ownerhive.com/products/web-check-in/" class="group rounded-[20px] border border-[#e4e4e7] bg-white overflow-hidden hover:border-[#126bdc] transition-all duration-300">
-                        <div class="aspect-[16/10] overflow-hidden bg-[#f4f4f5]">
-                            <img src="assets/media.jpg" alt="Web Check-In" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" width="900" height="600">
-                        </div>
-                        <div class="p-5">
-                            <p class="text-[11px] font-bold uppercase tracking-wider text-[#8b5cf6] mb-1">AI + ops</p>
-                            <h3 class="text-lg font-semibold text-[#09090b] group-hover:text-[#126bdc] transition-colors">Web Check-In</h3>
-                            <p class="mt-2 text-sm leading-6 text-[#71717a]">Customers check in from a link. Your floor stays moving without a download.</p>
+                        <div class="relative z-10 mt-auto p-4 pt-10">
+                            <h3 class="text-[15px] font-semibold tracking-tight text-[#fcfcfc]">Social Manager</h3>
+                            <p class="mt-1.5 text-xs leading-5 text-[#e4e4e7]/90">Plan, publish, and measure Instagram, Facebook, and Google from one feed.</p>
+                            <div class="mt-3 flex items-center justify-between">
+                                <span class="text-xs font-semibold text-[#fcfcfc]">Explore</span>
+                                <span class="build-card-arrow" aria-hidden="true">
+                                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                                        <polyline points="7 7 17 7 17 17"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
                         </div>
                     </a>
-                    <a href="https://ownerhive.com/products/review-booster/" class="group rounded-[20px] border border-[#e4e4e7] bg-white overflow-hidden hover:border-[#126bdc] transition-all duration-300">
-                        <div class="aspect-[16/10] overflow-hidden bg-[#f4f4f5]">
-                            <img src="assets/feedback.jpg" alt="Review Booster" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" width="900" height="600">
+                    <a href="https://ownerhive.com/products/queue-manager/" class="build-card group aspect-[4/5]" aria-label="Explore Queue Manager">
+                        <img src="assets/work.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" width="900" height="600">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/55 to-[#09090b]/10"></div>
+                        <div class="relative z-10 flex items-center px-4 pt-4">
+                            <span class="text-[10px] font-bold uppercase tracking-[0.16em] text-[#fcfcfc] bg-white/10 border border-white/15 backdrop-blur-md rounded-full px-2.5 py-1">Digital tools</span>
                         </div>
-                        <div class="p-5">
-                            <p class="text-[11px] font-bold uppercase tracking-wider text-[#cd5fff] mb-1">Marketing</p>
-                            <h3 class="text-lg font-semibold text-[#09090b] group-hover:text-[#126bdc] transition-colors">Review Booster</h3>
-                            <p class="mt-2 text-sm leading-6 text-[#71717a]">Ask for Google reviews after the visit. Route unhappy feedback privately first.</p>
+                        <div class="relative z-10 mt-auto p-4 pt-10">
+                            <h3 class="text-[15px] font-semibold tracking-tight text-[#fcfcfc]">Queue Manager</h3>
+                            <p class="mt-1.5 text-xs leading-5 text-[#e4e4e7]/90">Virtual waitlists over SMS — no customer app, live wait times, show up when it's their turn.</p>
+                            <div class="mt-3 flex items-center justify-between">
+                                <span class="text-xs font-semibold text-[#fcfcfc]">Explore</span>
+                                <span class="build-card-arrow" aria-hidden="true">
+                                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                                        <polyline points="7 7 17 7 17 17"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://ownerhive.com/products/web-check-in/" class="build-card group aspect-[4/5]" aria-label="Explore Web Check-In">
+                        <img src="assets/media.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" width="900" height="600">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/55 to-[#09090b]/10"></div>
+                        <div class="relative z-10 flex items-center px-4 pt-4">
+                            <span class="text-[10px] font-bold uppercase tracking-[0.16em] text-[#fcfcfc] bg-white/10 border border-white/15 backdrop-blur-md rounded-full px-2.5 py-1">AI + ops</span>
+                        </div>
+                        <div class="relative z-10 mt-auto p-4 pt-10">
+                            <h3 class="text-[15px] font-semibold tracking-tight text-[#fcfcfc]">Web Check-In</h3>
+                            <p class="mt-1.5 text-xs leading-5 text-[#e4e4e7]/90">Customers check in from a link. Your floor stays moving without a download.</p>
+                            <div class="mt-3 flex items-center justify-between">
+                                <span class="text-xs font-semibold text-[#fcfcfc]">Explore</span>
+                                <span class="build-card-arrow" aria-hidden="true">
+                                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                                        <polyline points="7 7 17 7 17 17"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://ownerhive.com/products/review-booster/" class="build-card group aspect-[4/5]" aria-label="Explore Review Booster">
+                        <img src="assets/feedback.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" width="900" height="600">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/55 to-[#09090b]/10"></div>
+                        <div class="relative z-10 flex items-center px-4 pt-4">
+                            <span class="text-[10px] font-bold uppercase tracking-[0.16em] text-[#fcfcfc] bg-white/10 border border-white/15 backdrop-blur-md rounded-full px-2.5 py-1">Marketing</span>
+                        </div>
+                        <div class="relative z-10 mt-auto p-4 pt-10">
+                            <h3 class="text-[15px] font-semibold tracking-tight text-[#fcfcfc]">Review Booster</h3>
+                            <p class="mt-1.5 text-xs leading-5 text-[#e4e4e7]/90">Ask for Google reviews after the visit. Route unhappy feedback privately first.</p>
+                            <div class="mt-3 flex items-center justify-between">
+                                <span class="text-xs font-semibold text-[#fcfcfc]">Explore</span>
+                                <span class="build-card-arrow" aria-hidden="true">
+                                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                                        <polyline points="7 7 17 7 17 17"></polyline>
+                                    </svg>
+                                </span>
+                            </div>
                         </div>
                     </a>
                 </div>
@@ -481,38 +779,65 @@
         </section>
 
         <!-- Our approach -->
-        <section class="py-20 sm:py-24 px-6 sm:px-10 lg:px-16 bg-[#fcfcfc]" id="approach" aria-labelledby="approach-title">
-            <div class="max-w-8xl mx-auto">
-                <div class="max-w-2xl mb-12">
-                    <p class="text-sm font-semibold tracking-[0.02em] text-[#126bdc] mb-3">Our approach</p>
-                    <h2 id="approach-title" class="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight [word-spacing:0.06em] leading-[1.15] text-[#09090b] text-balance">Why this company, not another brochure.</h2>
-                    <p class="mt-4 text-base leading-7 text-[#71717a]">We do not sell a vague platform story. We sell products you can evaluate, price, and put to work — then grow into more of the hive when it helps.</p>
+        <section class="relative overflow-hidden py-20 sm:py-24 lg:py-28 px-6 sm:px-10 lg:px-16 bg-[#09090b]" id="approach" aria-labelledby="approach-title">
+            <div class="absolute top-[18%] left-1/2 -translate-x-1/2 w-[640px] h-[420px] bg-[#126bdc]/22 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute bottom-0 right-0 w-[420px] h-[320px] bg-[#8b5cf6]/18 rounded-full blur-[110px] pointer-events-none"></div>
+            <div class="relative z-10 max-w-8xl mx-auto">
+                <div class="text-center mb-16 lg:mb-28">
+                    <span class="mx-auto mb-5 block w-8 h-px bg-gradient-to-r from-[#126bdc] to-[#8b5cf6]"></span>
+                    <p class="text-[11px] font-medium tracking-[0.28em] uppercase text-[#e4e4e7]/70 mb-4">Our approach</p>
+                    <h2 id="approach-title" class="max-w-3xl mx-auto text-3xl sm:text-4xl lg:text-5xl font-medium tracking-[-0.03em] leading-[1.15] text-[#fcfcfc] text-balance">Why this company, not another brochure.</h2>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-                    <article class="rounded-[20px] border border-[#e4e4e7] bg-white p-6 hover:border-[#126bdc] transition-colors duration-300">
-                        <p class="text-xs font-bold tracking-wider text-[#126bdc] uppercase mb-3">01</p>
-                        <h3 class="text-lg font-semibold text-[#09090b]">Simple</h3>
-                        <p class="mt-2 text-sm leading-6 text-[#71717a]">Powerful tools without unnecessary complexity. A business owner should not need a developer to get value.</p>
+                <div class="approach-list">
+                    <article class="approach-item">
+                        <div class="approach-label-wrap">
+                            <p class="approach-label">Simple</p>
+                        </div>
+                        <span class="approach-rule" aria-hidden="true"></span>
+                        <div class="approach-copy">
+                            <h3>Easy to start</h3>
+                            <p>Powerful tools without the complexity. A business owner should not need a developer to get value.</p>
+                        </div>
                     </article>
-                    <article class="rounded-[20px] border border-[#e4e4e7] bg-white p-6 hover:border-[#126bdc] transition-colors duration-300">
-                        <p class="text-xs font-bold tracking-wider text-[#126bdc] uppercase mb-3">02</p>
-                        <h3 class="text-lg font-semibold text-[#09090b]">Connected</h3>
-                        <p class="mt-2 text-sm leading-6 text-[#71717a]">Multiple business tools through one account and one ecosystem — not five logins and five invoices.</p>
+                    <article class="approach-item is-end">
+                        <div class="approach-label-wrap">
+                            <p class="approach-label">Connected</p>
+                        </div>
+                        <span class="approach-rule" aria-hidden="true"></span>
+                        <div class="approach-copy">
+                            <h3>One account</h3>
+                            <p>Multiple business tools through one login — not five apps and five invoices.</p>
+                        </div>
                     </article>
-                    <article class="rounded-[20px] border border-[#e4e4e7] bg-white p-6 hover:border-[#126bdc] transition-colors duration-300">
-                        <p class="text-xs font-bold tracking-wider text-[#126bdc] uppercase mb-3">03</p>
-                        <h3 class="text-lg font-semibold text-[#09090b]">Practical</h3>
-                        <p class="mt-2 text-sm leading-6 text-[#71717a]">Designed around real workflows: posting, waiting lines, check-ins, and reviews — not theatre.</p>
+                    <article class="approach-item">
+                        <div class="approach-label-wrap">
+                            <p class="approach-label">Practical</p>
+                        </div>
+                        <span class="approach-rule" aria-hidden="true"></span>
+                        <div class="approach-copy">
+                            <h3>Real workflows</h3>
+                            <p>Built around posting, waitlists, check-ins, and reviews — not theatre.</p>
+                        </div>
                     </article>
-                    <article class="rounded-[20px] border border-[#e4e4e7] bg-white p-6 hover:border-[#126bdc] transition-colors duration-300">
-                        <p class="text-xs font-bold tracking-wider text-[#126bdc] uppercase mb-3">04</p>
-                        <h3 class="text-lg font-semibold text-[#09090b]">AI-powered</h3>
-                        <p class="mt-2 text-sm leading-6 text-[#71717a]">AI that can use your products, prices, and offers — not a generic chatbot pasted on top.</p>
+                    <article class="approach-item is-end">
+                        <div class="approach-label-wrap">
+                            <p class="approach-label">AI-powered</p>
+                        </div>
+                        <span class="approach-rule" aria-hidden="true"></span>
+                        <div class="approach-copy">
+                            <h3>In the product</h3>
+                            <p>AI that can use your products, prices, and offers — not a generic chatbot on top.</p>
+                        </div>
                     </article>
-                    <article class="rounded-[20px] border border-[#e4e4e7] bg-white p-6 hover:border-[#126bdc] transition-colors duration-300 md:col-span-2 lg:col-span-1">
-                        <p class="text-xs font-bold tracking-wider text-[#126bdc] uppercase mb-3">05</p>
-                        <h3 class="text-lg font-semibold text-[#09090b]">Built to grow</h3>
-                        <p class="mt-2 text-sm leading-6 text-[#71717a]">Buy one product today. Add Queue, Reviews, or Check-In when the business needs them.</p>
+                    <article class="approach-item">
+                        <div class="approach-label-wrap">
+                            <p class="approach-label">Grow</p>
+                        </div>
+                        <span class="approach-rule" aria-hidden="true"></span>
+                        <div class="approach-copy">
+                            <h3>Start with one</h3>
+                            <p>Buy one product today. Add Queue, Reviews, or Check-In when the business needs them.</p>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -775,15 +1100,51 @@
             const openPanel = ['opacity-100', 'visible', 'translate-y-0', 'pointer-events-auto'];
             const closedPanel = ['opacity-0', 'invisible', 'translate-y-1.5', 'pointer-events-none'];
 
+            const lightLogo = document.querySelector('.site-logo-light');
+            const darkLogo = document.querySelector('.site-logo-dark');
+            const navBtns = document.querySelectorAll('.nav-item-btn');
+            const navDots = document.querySelectorAll('.nav-dots-icon');
+            const loginBtn = document.getElementById('nav-login');
+
             const syncHeader = () => {
                 if (!siteHeader) return;
                 const scrolled = window.scrollY > 20;
-                siteHeader.classList.toggle('bg-white/95', scrolled);
+                siteHeader.classList.toggle('bg-[#fcfcfc]/95', scrolled);
                 siteHeader.classList.toggle('backdrop-blur-xl', scrolled);
                 siteHeader.classList.toggle('border-[#e4e4e7]', scrolled);
                 siteHeader.classList.toggle('shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)]', scrolled);
                 siteHeader.classList.toggle('bg-transparent', !scrolled);
                 siteHeader.classList.toggle('border-transparent', !scrolled);
+                if (lightLogo) lightLogo.classList.toggle('hidden', scrolled);
+                if (darkLogo) darkLogo.classList.toggle('hidden', !scrolled);
+                navBtns.forEach((btn) => {
+                    const current = btn.getAttribute('aria-current') === 'page';
+                    btn.classList.toggle('text-[#fcfcfc]/85', !scrolled && !current);
+                    btn.classList.toggle('hover:text-[#fcfcfc]', !scrolled);
+                    btn.classList.toggle('text-[#fcfcfc]', !scrolled && current);
+                    btn.classList.toggle('text-[#71717a]', scrolled && !current);
+                    btn.classList.toggle('hover:text-[#126bdc]', scrolled);
+                    btn.classList.toggle('text-[#126bdc]', scrolled && current);
+                });
+                navDots.forEach((icon) => {
+                    icon.classList.toggle('text-[#e4e4e7]/70', !scrolled);
+                    icon.classList.toggle('text-[#71717a]', scrolled);
+                });
+                if (loginBtn) {
+                    loginBtn.classList.toggle('text-[#fcfcfc]', !scrolled);
+                    loginBtn.classList.toggle('bg-white/10', !scrolled);
+                    loginBtn.classList.toggle('border-[#e4e4e7]/25', !scrolled);
+                    loginBtn.classList.toggle('text-[#09090b]', scrolled);
+                    loginBtn.classList.toggle('bg-[#e4e4e7]', scrolled);
+                    loginBtn.classList.toggle('border-[#e4e4e7]', scrolled);
+                    loginBtn.classList.toggle('hover:text-[#126bdc]', scrolled);
+                }
+                if (mobileBtn) {
+                    mobileBtn.classList.toggle('text-[#fcfcfc]', !scrolled);
+                    mobileBtn.classList.toggle('border-[#e4e4e7]/30', !scrolled);
+                    mobileBtn.classList.toggle('text-[#09090b]', scrolled);
+                    mobileBtn.classList.toggle('border-[#e4e4e7]', scrolled);
+                }
             };
             window.addEventListener('scroll', syncHeader, { passive: true });
             syncHeader();
